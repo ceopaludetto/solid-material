@@ -1,0 +1,9 @@
+{
+  "extends": "@solid-material/configuration/tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": "src",
+    "jsx": "preserve",
+    "jsxImportSource": "solid-js"
+  },
+  "include": ["src", ".eslintrc.cjs", "tsup.config.ts"]
+}

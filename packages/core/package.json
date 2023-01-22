@@ -1,0 +1,47 @@
+{
+  "name": "@solid-material/core",
+  "version": "0.0.0",
+  "description": "Solid Material core components",
+  "keywords": [
+    "material you",
+    "material design",
+    "solid-js"
+  ],
+  "license": "MIT",
+  "author": {
+    "name": "Carlos Eduardo de Oliveira Paludetto",
+    "email": "ceo.paludetto@gmail.com"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "./dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "lint": "eslint \"src/**/*.{ts,tsx}\" --fix"
+  },
+  "dependencies": {
+    "@kobalte/core": "^0.4.0",
+    "@kobalte/utils": "^0.3.0",
+    "class-variance-authority": "^0.4.0",
+    "solid-js": "^1.6.9"
+  },
+  "devDependencies": {
+    "@rushstack/eslint-patch": "^1.2.0",
+    "@solid-material/configuration": "workspace:^0.0.0",
+    "eslint": "^8.32.0",
+    "tsup": "^6.5.0",
+    "tsup-preset-solid": "^0.1.3"
+  }
+}
