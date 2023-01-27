@@ -28,7 +28,7 @@ const className = "solid-material--ripple";
  * @param options Ripple Options
  * @returns void
  */
-export function createRipples<T extends HTMLElement, U extends HTMLElement>({
+export function createRipples<T extends HTMLElement = HTMLElement, U extends HTMLElement = T>({
   ref,
   positioner = ref as unknown as Accessor<U>,
   disabled,

@@ -3,11 +3,11 @@ import { cva } from "class-variance-authority";
 // Disable this rule until https://github.com/francoismassart/eslint-plugin-tailwindcss/issues/183
 // eslint-disable-next-line tailwindcss/no-custom-classname
 export const root = cva([
-  "group/input flex flex-col gap-y-1",
+  "group/input flex w-full flex-col gap-y-1",
   "ui-hover:ui-invalid:text-on-error-container ui-not-hover:ui-invalid:text-error ui-focus:ui-invalid:text-error ui-focus:ui-not-invalid:text-primary ui-not-focus:ui-not-invalid:text-on-surface-variant",
 ]);
 
-export const wrapper = cva(["relative inline-flex items-stretch overflow-hidden"], {
+export const wrapper = cva(["relative inline-flex w-full items-stretch overflow-hidden"], {
   variants: {
     variant: {
       filled: [
