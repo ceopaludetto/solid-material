@@ -1,6 +1,6 @@
 {
-  "name": "@solid-material/configuration",
-  "version": "0.0.0",
+  "name": "@solidjs-material/configuration",
+  "version": "0.0.2",
   "description": "Solid material base configuration",
   "keywords": [],
   "license": "MIT",

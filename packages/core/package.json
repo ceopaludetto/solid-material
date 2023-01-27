@@ -1,6 +1,6 @@
 {
-  "name": "@solid-material/core",
-  "version": "0.0.0",
+  "name": "@solidjs-material/core",
+  "version": "0.0.2",
   "description": "Solid Material core components",
   "keywords": [
     "material you",
@@ -43,7 +43,7 @@
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
-    "@solid-material/configuration": "workspace:^0.0.0",
+    "@solidjs-material/configuration": "workspace:^0.0.2",
     "eslint": "^8.32.0",
     "tsup": "^6.5.0",
     "tsup-preset-solid": "^0.1.4"

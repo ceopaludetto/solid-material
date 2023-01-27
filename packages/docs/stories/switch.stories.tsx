@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/html";
 
-import { Switch } from "@solid-material/core";
+import { Switch } from "@solidjs-material/core";
 
 export default {
   title: "Switch",

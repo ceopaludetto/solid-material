@@ -16,6 +16,10 @@ export const typographyTokens = {
   "title-large": { lineHeight: 28, size: 22, tracking: 0, weight: 400 },
   "title-medium": { lineHeight: 24, size: 16, tracking: 0.15, weight: 500 },
   "title-small": { lineHeight: 20, size: 14, tracking: 0.1, weight: 500 },
+
+  "icon-small": { lineHeight: 16, size: 18, tracking: 0, weight: 400 },
+  "icon-medium": { lineHeight: 16, size: 24, tracking: 0, weight: 400 },
+  "icon-large": { lineHeight: 16, size: 36, tracking: 0, weight: 400 },
 };
 
 export type TypographyVariants = keyof typeof typographyTokens;

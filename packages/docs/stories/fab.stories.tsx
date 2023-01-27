@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/html";
 
-import { FAB } from "@solid-material/core";
+import { FAB } from "@solidjs-material/core";
 import { Plus } from "lucide-solid";
 
 export default {

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/html";
 
-import { Card } from "@solid-material/core";
+import { Card } from "@solidjs-material/core";
 
 export default {
   title: "Card",

@@ -1,7 +1,7 @@
-const { designSystem } = require("@solid-material/tailwind");
+const { designSystem } = require("@solidjs-material/tailwind");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./node_modules/@solid-material/core/dist/*.{js,cjs}", "./stories/**/*.tsx"],
+  content: ["./node_modules/@solidjs-material/core/dist/*.{js,cjs}", "./stories/**/*.tsx"],
   presets: [designSystem({ baseColor: "#00AAFF" })],
 };

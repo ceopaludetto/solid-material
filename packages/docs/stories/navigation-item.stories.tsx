@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/html";
 
-import { NavigationItem } from "@solid-material/core";
+import { NavigationItem } from "@solidjs-material/core";
 import { Home } from "lucide-solid";
 
 export default {

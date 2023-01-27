@@ -18,4 +18,4 @@ export const root = cva(
 
 export const content = cva(["flex-1 text-label-large"]);
 
-export const icon = cva(["text-headline-small reset-svg"]);
+export const icon = cva(["text-icon-medium reset-svg"]);

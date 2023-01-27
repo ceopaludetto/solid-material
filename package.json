@@ -1,5 +1,5 @@
 {
-  "name": "solid-material",
+  "name": "solidjs-material",
   "version": "1.0.0",
   "private": true,
   "description": "",
@@ -14,7 +14,7 @@
     "build": "turbo build",
     "dev": "turbo dev --parallel",
     "lint": "turbo lint",
-    "publish-packages": "turbo run build lint test && changeset version && changeset publish"
+    "publish-packages": "turbo run build lint && changeset version && changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.0",

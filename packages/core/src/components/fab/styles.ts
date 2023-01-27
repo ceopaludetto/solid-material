@@ -28,9 +28,9 @@ export const root = cva(
 export const icon = cva(["inline-flex reset-svg"], {
   variants: {
     size: {
-      small: ["text-headline-small"],
-      medium: ["text-headline-small"],
-      large: ["text-display-small"],
+      small: ["text-icon-medium"],
+      medium: ["text-icon-medium"],
+      large: ["text-icon-large"],
     },
   },
 });

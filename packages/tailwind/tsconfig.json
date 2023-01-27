@@ -1,5 +1,5 @@
 {
-  "extends": "@solid-material/configuration/tsconfig.base.json",
+  "extends": "@solidjs-material/configuration/tsconfig.base.json",
   "compilerOptions": {
     "lib": ["ESNext", "DOM"],
     "baseUrl": "src",

@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/html";
 
-import { TextField, IconButton } from "@solid-material/core";
+import { TextField, IconButton } from "@solidjs-material/core";
 import { Eye, User, X } from "lucide-solid";
 
 export default {

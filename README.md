@@ -10,22 +10,22 @@ Solid-js high quality components built with [Tailwindcss](https://tailwindcss.co
 
 ## Get Started
 
-Install `@solid-material/core` and `@solid-material/tailwind`:
+Install `@solidjs-material/core` and `@solidjs-material/tailwind`:
 
 ```
-npm install @solid-material/core && npm install --save-dev @solid-material/tailwind
-yarn add @solid-material/core && yarn add -D @solid-material/tailwind
-pnpm add @solid-material/core && pnpm add -D @solid-material/tailwind
+npm install @solidjs-material/core && npm install --save-dev @solidjs-material/tailwind
+yarn add @solidjs-material/core && yarn add -D @solidjs-material/tailwind
+pnpm add @solidjs-material/core && pnpm add -D @solidjs-material/tailwind
 ```
 
 Setup `tailwindcss` preset:
 
 ```js
-const { designSystem } = require("@solid-material/tailwind");
+const { designSystem } = require("@solidjs-material/tailwind");
 
 module.exports = {
   content: [
-    "./node_modules/@solid-material/core/dist/*.{js,cjs}", // You must specify solid material core components
+    "./node_modules/@solidjs-material/core/dist/*.{js,cjs}", // You must specify solid material core components
     "./src/**/*.{ts,tsx}", // Your app components
   ],
   presets: [designSystem({ baseColor: "#FACADA" })], // Try to change baseColor
@@ -35,7 +35,7 @@ module.exports = {
 Start using the components:
 
 ```tsx
-import { Button } from "@solid-material/core";
+import { Button } from "@solidjs-material/core";
 
 export function App() {
   return <Button>Hello World!</Button>;

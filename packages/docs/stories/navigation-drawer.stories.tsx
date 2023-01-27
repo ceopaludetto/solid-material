@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/html";
 
-import { NavigationDrawer, NavigationDrawerItem, FAB, IconButton } from "@solid-material/core";
+import { NavigationDrawer, NavigationDrawerItem, FAB, IconButton } from "@solidjs-material/core";
 import { Menu, Plus } from "lucide-solid";
 import { For } from "solid-js";
 

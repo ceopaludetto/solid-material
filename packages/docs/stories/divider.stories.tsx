@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/html";
 
-import { Divider } from "@solid-material/core";
+import { Divider } from "@solidjs-material/core";
 
 export default {
   title: "Divider",

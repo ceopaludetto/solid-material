@@ -29,4 +29,4 @@ export const root = cva(
   },
 );
 
-export const icon = cva(["inline-flex text-lg reset-svg"]);
+export const icon = cva(["inline-flex text-icon-small reset-svg"]);

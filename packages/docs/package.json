@@ -1,6 +1,7 @@
 {
-  "name": "@solid-material/docs",
-  "version": "0.0.0",
+  "name": "@solidjs-material/docs",
+  "version": "0.0.1",
+  "private": true,
   "description": "",
   "keywords": [],
   "license": "MIT",
@@ -16,13 +17,13 @@
     "lint": "eslint \"stories/**/*.{ts,tsx}\" --fix"
   },
   "dependencies": {
-    "@solid-material/core": "workspace:^0.0.0",
+    "@solidjs-material/core": "workspace:^0.0.2",
     "lucide-solid": "^0.105.0",
     "solid-js": "^1.6.9"
   },
   "devDependencies": {
-    "@solid-material/configuration": "workspace:^0.0.0",
-    "@solid-material/tailwind": "workspace:^0.0.0",
+    "@solidjs-material/configuration": "workspace:^0.0.2",
+    "@solidjs-material/tailwind": "workspace:^0.0.2",
     "@storybook/addon-a11y": "7.0.0-beta.33",
     "@storybook/addon-essentials": "7.0.0-beta.33",
     "@storybook/addon-interactions": "7.0.0-beta.33",

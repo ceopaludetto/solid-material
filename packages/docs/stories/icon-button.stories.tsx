@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/html";
 
-import { IconButton } from "@solid-material/core";
+import { IconButton } from "@solidjs-material/core";
 import { Heart } from "lucide-solid";
 
 export default {
