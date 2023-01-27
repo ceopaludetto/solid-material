@@ -1,5 +1,14 @@
 # @solidjs-material/docs
 
+## 0.0.4
+
+### Patch Changes
+
+- c00fd89: Bump depedencies
+- Updated dependencies [c00fd89]
+- Updated dependencies [2efedad]
+  - @solidjs-material/core@0.0.5
+
 ## 0.0.3
 
 ### Patch Changes
