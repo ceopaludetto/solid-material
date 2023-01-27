@@ -16,20 +16,27 @@ type TextFieldOwnProps = KTextField.TextFieldRootOptions &
     class?: string;
   };
 
-export type TextFieldProps<T extends As> = PolymorphicProps<T, TextFieldOwnProps>;
+export type TextFieldProps<T extends As = "input"> = PolymorphicProps<T, TextFieldOwnProps>;
 
-export function TextField<T extends As>(props: TextFieldProps<T>) {
+export function TextField<T extends As = "input">(props: TextFieldProps<T>) {
   let ref!: HTMLInputElement;
   const [keepFloating, setKeepFloating] = createSignal(false);
 
-  const [local, rest] = splitProps(props, [
-    "class",
-    "label",
-    "variant",
-    "description",
-    "startAdornment",
-    "endAdornment",
-  ]);
+  const [local, parent, rest] = splitProps(
+    props,
+    ["class", "label", "variant", "description", "startAdornment", "endAdornment"],
+    [
+      "value",
+      "defaultValue",
+      "onValueChange",
+      "id",
+      "name",
+      "validationState",
+      "isRequired",
+      "isDisabled",
+      "isReadOnly",
+    ],
+  );
 
   function shouldFloat(event: Event) {
     setKeepFloating(!!(event.target as HTMLInputElement)?.value);
@@ -47,14 +54,14 @@ export function TextField<T extends As>(props: TextFieldProps<T>) {
   const hasError = createMemo(() => props.validationState === "invalid");
 
   return (
-    <KTextField.Root class={root({ class: local.class })} {...rest}>
+    <KTextField.Root class={root({ class: local.class })} {...parent}>
       <div class={wrapper({ variant: local.variant ?? "filled" })}>
         <Show when={!!local.startAdornment}>
           <div class={adornment({ variant: "start" })}>{local.startAdornment}</div>
         </Show>
         <div class={field()}>
           <KTextField.Label class={label({ keepFloating: keepFloating() })}>{local.label}</KTextField.Label>
-          <KTextField.Input ref={ref} class={input()} />
+          <KTextField.Input ref={ref} class={input()} {...rest} />
         </div>
         <Show when={!!local.endAdornment}>
           <div class={adornment({ variant: "end" })}>{local.endAdornment}</div>
