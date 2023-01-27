@@ -1,6 +1,6 @@
 {
   "name": "@solidjs-material/docs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "description": "",
   "keywords": [],
@@ -17,13 +17,13 @@
     "lint": "eslint \"stories/**/*.{ts,tsx}\" --fix"
   },
   "dependencies": {
-    "@solidjs-material/core": "workspace:^0.0.2",
+    "@solidjs-material/core": "workspace:^0.0.3",
     "lucide-solid": "^0.105.0",
     "solid-js": "^1.6.9"
   },
   "devDependencies": {
     "@solidjs-material/configuration": "workspace:^0.0.2",
-    "@solidjs-material/tailwind": "workspace:^0.0.2",
+    "@solidjs-material/tailwind": "workspace:^0.0.3",
     "@storybook/addon-a11y": "7.0.0-beta.33",
     "@storybook/addon-essentials": "7.0.0-beta.33",
     "@storybook/addon-interactions": "7.0.0-beta.33",
