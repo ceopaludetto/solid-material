@@ -15,7 +15,7 @@ type IconButtonOwnProps = VariantProps<typeof root> & {
 
 export type IconButtonProps<T extends As = "button"> = PolymorphicProps<T, IconButtonOwnProps>;
 
-export function IconButton<T extends As>(props: IconButtonProps<T>) {
+export function IconButton<T extends As = "button">(props: IconButtonProps<T>) {
   let ref!: HTMLButtonElement;
 
   createRipples({ ref: () => ref, center: true, disabled: props.isDisabled });

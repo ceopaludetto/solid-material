@@ -14,9 +14,9 @@ type NavigationDrawerItemOwnProps = {
   children: JSX.Element;
 };
 
-export type NavigationDrawerItemProps<T extends As> = PolymorphicProps<T, NavigationDrawerItemOwnProps>;
+export type NavigationDrawerItemProps<T extends As = "a"> = PolymorphicProps<T, NavigationDrawerItemOwnProps>;
 
-export function NavigationDrawerItem<T extends As>(props: NavigationDrawerItemProps<T>) {
+export function NavigationDrawerItem<T extends As = "a">(props: NavigationDrawerItemProps<T>) {
   let ref!: HTMLAnchorElement;
 
   createRipples({ ref: () => ref });
