@@ -36,8 +36,8 @@
     "lint": "eslint \"src/**/*.{ts,tsx}\" --fix"
   },
   "dependencies": {
-    "@kobalte/core": "^0.4.0",
-    "@kobalte/utils": "^0.3.0",
+    "@kobalte/core": "^0.5.0",
+    "@kobalte/utils": "^0.4.0",
     "class-variance-authority": "^0.4.0",
     "solid-js": "^1.6.9"
   },
@@ -46,7 +46,7 @@
     "@solidjs-material/configuration": "workspace:^0.0.2",
     "eslint": "^8.32.0",
     "tsup": "^6.5.0",
-    "tsup-preset-solid": "^0.1.4"
+    "tsup-preset-solid": "^0.1.5"
   },
   "publishConfig": {
     "access": "public"
