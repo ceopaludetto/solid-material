@@ -4,19 +4,23 @@
   "private": true,
   "description": "",
   "keywords": [],
-  "license": "ISC",
-  "author": "",
+  "license": "MIT",
+  "author": {
+    "name": "Carlos Eduardo de Oliveira Paludetto",
+    "email": "ceo.paludetto@gmail.com"
+  },
   "main": "index.js",
   "scripts": {
     "build": "turbo build",
     "dev": "turbo dev --parallel",
-    "lint": "turbo lint"
+    "lint": "turbo lint",
+    "publish-packages": "turbo run build lint test && changeset version && changeset publish"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.26.0",
     "prettier": "^2.8.3",
     "prettier-plugin-packagejson": "^2.4.0",
     "turbo": "^1.7.0",
-    "typescript": "^4.9.4",
-    "vue": "^3.2.45"
+    "typescript": "^4.9.4"
   }
 }
