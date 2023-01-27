@@ -1,5 +1,11 @@
 # @solidjs-material/core
 
+## 0.0.4
+
+### Patch Changes
+
+- fix text-field splitProps logic
+
 ## 0.0.3
 
 ### Patch Changes
