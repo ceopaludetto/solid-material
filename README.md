@@ -75,6 +75,6 @@ export function App() {
 
 ### Library related
 
-- [ ] Changesets
+- [x] Changesets
 - [ ] Tests
 - [ ] Docs
