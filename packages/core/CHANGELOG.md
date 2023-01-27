@@ -1,5 +1,12 @@
 # @solidjs-material/core
 
+## 0.0.5
+
+### Patch Changes
+
+- c00fd89: Bump depedencies
+- 2efedad: Add w-full to TextField
+
 ## 0.0.4
 
 ### Patch Changes
