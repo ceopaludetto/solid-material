@@ -8,6 +8,7 @@ export const shapeTokens = {
   sm: 8,
   xl: 28,
   xs: 4,
+  xxs: 2,
 };
 
 export type ShapeVariants = keyof typeof shapeTokens;

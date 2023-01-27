@@ -48,7 +48,7 @@ export function App() {
 
 - [x] Button
 - [x] Card
-- [ ] Checkbox
+- [x] Checkbox
 - [ ] Chip
 - [ ] Date Pickers
 - [x] Divider
