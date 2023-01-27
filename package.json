@@ -9,12 +9,14 @@
   "main": "index.js",
   "scripts": {
     "build": "turbo build",
+    "dev": "turbo dev --parallel",
     "lint": "turbo lint"
   },
   "devDependencies": {
     "prettier": "^2.8.3",
     "prettier-plugin-packagejson": "^2.4.0",
     "turbo": "^1.7.0",
-    "typescript": "^4.9.4"
+    "typescript": "^4.9.4",
+    "vue": "^3.2.45"
   }
 }

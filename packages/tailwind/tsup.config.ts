@@ -4,6 +4,7 @@ import { defineConfig } from "tsup";
 export default defineConfig({
   entry: ["src/index.ts"],
   format: ["esm", "cjs"],
+  noExternal: ["@material/material-color-utilities"],
   dts: true,
   sourcemap: true,
   clean: true,

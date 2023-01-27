@@ -14,20 +14,24 @@
   },
   "type": "module",
   "exports": {
-    ".": {
+    "solid": "./dist/index.jsx",
+    "import": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.js"
-    }
+      "default": "./dist/index.js"
+    },
+    "require": "./dist/index.cjs"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
+  "browser": {},
   "types": "./dist/index.d.ts",
+  "typesVersions": {},
   "files": [
     "./dist"
   ],
   "scripts": {
     "build": "tsup",
+    "build:storybook": "sb build",
     "dev": "tsup --watch",
     "lint": "eslint \"src/**/*.{ts,tsx}\" --fix"
   },
@@ -42,6 +46,9 @@
     "@solid-material/configuration": "workspace:^0.0.0",
     "eslint": "^8.32.0",
     "tsup": "^6.5.0",
-    "tsup-preset-solid": "^0.1.3"
+    "tsup-preset-solid": "^0.1.4"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }

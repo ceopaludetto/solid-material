@@ -1,9 +1,13 @@
 {
   "extends": "@solid-material/configuration/tsconfig.base.json",
   "compilerOptions": {
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "baseUrl": "src",
     "jsx": "preserve",
-    "jsxImportSource": "solid-js"
+    "jsxImportSource": "solid-js",
+    "paths": {
+      "~/*": ["./*"]
+    }
   },
   "include": ["src", ".eslintrc.cjs", "tsup.config.ts"]
 }

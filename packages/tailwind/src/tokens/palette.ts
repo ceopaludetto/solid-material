@@ -8,7 +8,8 @@ import {
   redFromArgb,
   themeFromSourceColor,
 } from "@material/material-color-utilities";
-import { getTypedEntries, getTypedKeys, kebabCase } from "utils";
+
+import { getTypedEntries, getTypedKeys, kebabCase } from "~/utils";
 
 export type ColorVariants = KebabCase<keyof ReturnType<Scheme["toJSON"]>>;
 
@@ -24,7 +25,7 @@ export function createPaletteFromColor(color: string) {
 export function createTailwindColorsFromScheme(scheme: Scheme) {
   return getTypedKeys(scheme.toJSON()).reduce((acc, color) => {
     const name = kebabCase(color);
-    acc[name] = `rgb(${name} / <alpha-value>)`;
+    acc[name] = `rgb(var(--${name}) / <alpha-value>)`;
 
     return acc;
   }, {} as Record<ColorVariants, string>);
@@ -33,8 +34,8 @@ export function createTailwindColorsFromScheme(scheme: Scheme) {
 export function createCSSVariablesFromScheme(scheme: Scheme) {
   return getTypedEntries(scheme.toJSON()).reduce((acc, [color, value]) => {
     const name = kebabCase(color);
-    acc[name] = toRGB(value);
+    acc[`--${name}`] = toRGB(value);
 
     return acc;
-  }, {} as Record<ColorVariants, string>);
+  }, {} as Record<`--${ColorVariants}`, string>);
 }

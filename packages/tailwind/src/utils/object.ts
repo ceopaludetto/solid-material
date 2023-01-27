@@ -7,3 +7,7 @@ export function getTypedEntries<T extends object>(value: T) {
 export function getTypedKeys<T extends object>(value: T) {
   return Object.keys(value) as (keyof T)[];
 }
+
+export function addDefault<T extends object>(value: T, item: keyof T) {
+  return { ...value, DEFAULT: value[item] };
+}

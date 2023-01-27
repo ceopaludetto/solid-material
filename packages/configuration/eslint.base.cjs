@@ -25,5 +25,7 @@ module.exports = {
         "newlines-between": "always",
       },
     ],
+    // misc
+    "no-restricted-syntax": "off",
   },
 };

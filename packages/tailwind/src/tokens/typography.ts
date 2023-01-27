@@ -1,4 +1,4 @@
-import { getTypedEntries } from "utils";
+import { getTypedEntries } from "~/utils";
 
 export const typographyTokens = {
   "body-large": { lineHeight: 24, size: 16, tracking: 0.5, weight: 400 },

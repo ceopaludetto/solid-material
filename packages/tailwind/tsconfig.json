@@ -1,7 +1,11 @@
 {
   "extends": "@solid-material/configuration/tsconfig.base.json",
   "compilerOptions": {
-    "baseUrl": "src"
+    "lib": ["ESNext", "DOM"],
+    "baseUrl": "src",
+    "paths": {
+      "~/*": ["./*"]
+    }
   },
   "include": ["src", ".eslintrc.cjs", "tsup.config.ts"]
 }

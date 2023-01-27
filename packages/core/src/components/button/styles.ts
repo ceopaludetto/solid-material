@@ -1,9 +1,32 @@
 import { cva } from "class-variance-authority";
 
-export const root = cva(["rounded-full"], {
-  variants: {
-    variant: {
-      filled: ["bg-primary", "text-on-primary"],
+export const root = cva(
+  [
+    "inline-flex h-10 items-center justify-center gap-x-2 rounded-full text-label-large outline-none transition state-layer ripple",
+    "ui-hover:hover-state-layer ui-focus:focus-state-layer ui-focus-visible:hover-state-layer ui-active:press-state-layer",
+  ],
+  {
+    variants: {
+      variant: {
+        filled: ["bg-primary text-on-primary ui-disabled:bg-on-surface/12 ui-disabled:text-on-surface/38"],
+        tonal: [
+          "bg-secondary-container text-on-secondary-container ui-disabled:bg-on-surface/12 ui-disabled:text-on-surface/38",
+        ],
+        outlined: [
+          "border border-outline bg-surface text-primary ui-disabled:border-on-surface/12 ui-disabled:text-on-surface/38 ui-focus:border-primary",
+        ],
+        text: ["bg-transparent text-primary ui-disabled:text-on-surface/38"],
+      },
+      hasStartIcon: {
+        true: ["pl-4"],
+        false: ["pl-6"],
+      },
+      hasEndIcon: {
+        true: ["pr-4"],
+        false: ["pr-6"],
+      },
     },
   },
-});
+);
+
+export const icon = cva(["inline-flex text-lg reset-svg"]);

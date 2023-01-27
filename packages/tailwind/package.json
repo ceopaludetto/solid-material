@@ -15,11 +15,11 @@
   },
   "type": "module",
   "exports": {
-    ".": {
+    "import": {
       "types": "./dist/index.d.ts",
-      "require": "./dist/index.cjs",
-      "import": "./dist/index.js"
-    }
+      "default": "./dist/index.js"
+    },
+    "require": "./dist/index.cjs"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -44,5 +44,8 @@
     "eslint": "^8.32.0",
     "tsup": "^6.5.0",
     "type-fest": "^3.5.3"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
