@@ -9,10 +9,18 @@ export default {
 
 export const Default: StoryObj<typeof Switch> = {};
 
+export const LabelOnRight: StoryObj<typeof Switch> = {
+  args: { labelPlacement: "right" },
+};
+
 export const DefaultChecked: StoryObj<typeof Switch> = {
   args: { defaultIsChecked: true },
 };
 
 export const Disabled: StoryObj<typeof Switch> = {
   args: { isDisabled: true },
+};
+
+export const DisabledAndChecked: StoryObj<typeof Switch> = {
+  args: { isDisabled: true, defaultIsChecked: true },
 };

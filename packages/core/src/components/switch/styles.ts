@@ -1,9 +1,21 @@
 import { cva } from "class-variance-authority";
 
-export const root = cva([
-  "flex items-center gap-x-2",
-  "ui-hover:group-hover-state-layer ui-focus:group-focus-state-layer ui-active:group-press-state-layer",
-]);
+export const root = cva(
+  [
+    "flex items-center gap-4",
+    "ui-hover:group-hover-state-layer ui-focus:group-focus-state-layer ui-active:group-press-state-layer",
+  ],
+  {
+    variants: {
+      labelPlacement: {
+        left: ["flex-row"],
+        right: ["flex-row-reverse"],
+        top: ["flex-col"],
+        bottom: ["flex-col-reverse"],
+      },
+    },
+  },
+);
 
 export const control = cva([
   "inline-flex aspect-[13/8] h-8 items-center rounded-full border-2 border-outline transition duration-short4 ease-emphasized",
