@@ -5,7 +5,7 @@ import type { JSX } from "solid-js";
 import { TextField as KTextField } from "@kobalte/core";
 import { createMemo, createSignal, onCleanup, onMount, Show, splitProps } from "solid-js";
 
-import { adornment, description, input, label, root, wrapper } from "./styles";
+import { adornment, description, field, input, label, root, wrapper } from "./styles";
 
 type TextFieldOwnProps = KTextField.TextFieldRootOptions &
   VariantProps<typeof wrapper> & {
@@ -52,7 +52,7 @@ export function TextField<T extends As>(props: TextFieldProps<T>) {
         <Show when={!!local.startAdornment}>
           <div class={adornment({ variant: "start" })}>{local.startAdornment}</div>
         </Show>
-        <div class="relative">
+        <div class={field()}>
           <KTextField.Label class={label({ keepFloating: keepFloating() })}>{local.label}</KTextField.Label>
           <KTextField.Input ref={ref} class={input()} />
         </div>

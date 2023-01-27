@@ -11,7 +11,7 @@ export const wrapper = cva(["relative inline-flex items-stretch overflow-hidden"
   variants: {
     variant: {
       filled: [
-        "rounded-xxs bg-surface-variant state-layer",
+        "rounded-xs bg-surface-variant state-layer",
         "after:absolute after:bottom-0 after:left-1/2 after:h-0.5 after:w-0 after:bg-primary after:transition-[width,left] group-ui-focus/input:after:left-0 group-ui-focus/input:after:w-full",
         "group-ui-focus/input:!reset-state-layer group-ui-hover/input:hover-state-layer",
         "group-ui-disabled/input:bg-on-surface/4 group-ui-invalid/input:after:bg-error",
@@ -34,6 +34,8 @@ export const label = cva(
     },
   },
 );
+
+export const field = cva(["relative w-full"]);
 
 export const input = cva([
   "h-14 w-full bg-transparent px-4 pt-5 pb-2 text-body-large outline-none ui-disabled:text-on-surface/38 ui-not-disabled:text-on-surface",
