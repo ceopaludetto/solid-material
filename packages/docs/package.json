@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "@solidjs-material/core": "workspace:^0.0.4",
-    "lucide-solid": "^0.105.0",
+    "lucide-solid": "^0.107.0",
     "solid-js": "^1.6.9"
   },
   "devDependencies": {
