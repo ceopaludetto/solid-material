@@ -1,6 +1,6 @@
 {
   "name": "@solidjs-material/docs",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "private": true,
   "description": "",
   "keywords": [],
@@ -17,7 +17,7 @@
     "lint": "eslint \"stories/**/*.{ts,tsx}\" --fix"
   },
   "dependencies": {
-    "@solidjs-material/core": "workspace:^0.0.6",
+    "@solidjs-material/core": "workspace:^0.0.7",
     "lucide-solid": "^0.107.0",
     "solid-js": "^1.6.9"
   },

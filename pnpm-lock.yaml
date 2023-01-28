@@ -67,7 +67,7 @@ importers:
   packages/docs:
     specifiers:
       '@solidjs-material/configuration': workspace:^0.0.4
-      '@solidjs-material/core': workspace:^0.0.6
+      '@solidjs-material/core': workspace:^0.0.7
       '@solidjs-material/tailwind': workspace:^0.0.5
       '@storybook/addon-a11y': 7.0.0-beta.33
       '@storybook/addon-essentials': 7.0.0-beta.33
