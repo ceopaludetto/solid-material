@@ -6,6 +6,7 @@ import { TextField as KTextField } from "@kobalte/core";
 import { createMemo, createSignal, onCleanup, onMount, Show, splitProps } from "solid-js";
 
 import { adornment, description, field, input, label, root, wrapper } from "./styles";
+import { mergeWithRefs } from "~/utils/refs";
 
 type TextFieldOwnProps = KTextField.TextFieldRootOptions &
   VariantProps<typeof wrapper> & {
@@ -19,7 +20,7 @@ type TextFieldOwnProps = KTextField.TextFieldRootOptions &
 export type TextFieldProps<T extends As = "input"> = PolymorphicProps<T, TextFieldOwnProps>;
 
 export function TextField<T extends As = "input">(props: TextFieldProps<T>) {
-  let ref!: HTMLInputElement;
+  const [ref, getRef] = createSignal<HTMLInputElement>();
   const [keepFloating, setKeepFloating] = createSignal(false);
 
   const [local, parent, rest] = splitProps(
@@ -43,12 +44,16 @@ export function TextField<T extends As = "input">(props: TextFieldProps<T>) {
   }
 
   onMount(() => {
-    setKeepFloating(!!ref.value);
-    ref.addEventListener("change", shouldFloat);
+    const el = ref();
+
+    setKeepFloating(!!el?.value);
+    el?.addEventListener("change", shouldFloat);
   });
 
   onCleanup(() => {
-    ref.removeEventListener("change", shouldFloat);
+    const el = ref();
+
+    el?.removeEventListener("change", shouldFloat);
   });
 
   const hasError = createMemo(() => props.validationState === "invalid");
@@ -61,7 +66,7 @@ export function TextField<T extends As = "input">(props: TextFieldProps<T>) {
         </Show>
         <div class={field()}>
           <KTextField.Label class={label({ keepFloating: keepFloating() })}>{local.label}</KTextField.Label>
-          <KTextField.Input ref={ref} class={input()} {...rest} />
+          <KTextField.Input class={input()} {...mergeWithRefs(getRef, rest)} />
         </div>
         <Show when={!!local.endAdornment}>
           <div class={adornment({ variant: "end" })}>{local.endAdornment}</div>

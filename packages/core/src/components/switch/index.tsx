@@ -2,10 +2,11 @@ import type { As, PolymorphicProps } from "@kobalte/utils";
 import type { VariantProps } from "class-variance-authority";
 
 import { Switch as KSwitch } from "@kobalte/core";
-import { splitProps } from "solid-js";
+import { createSignal, splitProps } from "solid-js";
 
 import { control, root, thumb } from "./styles";
 import { createRipples } from "~/primitives";
+import { mergeWithRefs } from "~/utils/refs";
 
 type SwitchOwnProps = KSwitch.SwitchRootOptions &
   VariantProps<typeof root> & {
@@ -16,15 +17,19 @@ type SwitchOwnProps = KSwitch.SwitchRootOptions &
 export type SwitchProps<T extends As = "label"> = PolymorphicProps<T, SwitchOwnProps>;
 
 export function Switch<T extends As = "label">(props: SwitchProps<T>) {
-  let ref!: HTMLLabelElement;
+  const [ref, getRef] = createSignal<HTMLLabelElement>();
+
   let thumbRef!: HTMLDivElement;
 
-  createRipples({ ref: () => ref, positioner: () => thumbRef, disabled: props.isDisabled, center: true, size: 40 });
+  createRipples({ ref, positioner: () => thumbRef, disabled: props.isDisabled, center: true, size: 40 });
 
   const [local, rest] = splitProps(props, ["class", "label", "labelPlacement"]);
 
   return (
-    <KSwitch.Root ref={ref} class={root({ class: local.class, labelPlacement: local.labelPlacement })} {...rest}>
+    <KSwitch.Root
+      class={root({ class: local.class, labelPlacement: local.labelPlacement })}
+      {...mergeWithRefs(getRef, rest)}
+    >
       <KSwitch.Input />
       <KSwitch.Label>{local.label}</KSwitch.Label>
       <KSwitch.Control class={control()}>

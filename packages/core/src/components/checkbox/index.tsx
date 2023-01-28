@@ -2,10 +2,11 @@ import type { As, PolymorphicProps } from "@kobalte/utils";
 import type { VariantProps } from "class-variance-authority";
 
 import { Checkbox as KCheckbox } from "@kobalte/core";
-import { Show, splitProps } from "solid-js";
+import { createSignal, Show, splitProps } from "solid-js";
 
 import { control, indicator, root } from "./styles";
 import { createRipples } from "~/primitives";
+import { mergeWithRefs } from "~/utils/refs";
 
 type CheckboxOwnProps = KCheckbox.CheckboxRootOptions &
   VariantProps<typeof root> & {
@@ -18,14 +19,18 @@ type CheckboxOwnProps = KCheckbox.CheckboxRootOptions &
 export type CheckboxProps<T extends As> = PolymorphicProps<T, CheckboxOwnProps>;
 
 export function Checkbox<T extends As = "label">(props: CheckboxProps<T>) {
-  let ref!: HTMLLabelElement;
+  const [ref, getRef] = createSignal<HTMLLabelElement>();
+
   let controlRef!: HTMLDivElement;
 
-  createRipples({ ref: () => ref, positioner: () => controlRef, size: 40, center: true, disabled: props.isDisabled });
+  createRipples({ ref, positioner: () => controlRef, size: 40, center: true, disabled: props.isDisabled });
   const [local, rest] = splitProps(props, ["class", "label", "checkIcon", "indeterminateIcon", "labelPlacement"]);
 
   return (
-    <KCheckbox.Root ref={ref} class={root({ class: local.class, labelPlacement: local.labelPlacement })} {...rest}>
+    <KCheckbox.Root
+      class={root({ class: local.class, labelPlacement: local.labelPlacement })}
+      {...mergeWithRefs(getRef, rest)}
+    >
       <KCheckbox.Input />
       <KCheckbox.Label>{local.label}</KCheckbox.Label>
       <KCheckbox.Control ref={controlRef} class={control()}>

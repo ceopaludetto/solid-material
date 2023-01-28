@@ -6,7 +6,7 @@ import { cancelRippleAnimation, centerElementToPointer, completedFactor, createR
 import { applyClasses, filterKeyboardEvent, filterMouseEvent, isKeyboardEvent, isTouchDevice } from "~/utils/dom";
 
 export type RippleOptions<T extends HTMLElement = HTMLElement, U extends HTMLElement = T> = {
-  ref: Accessor<T>;
+  ref: Accessor<T | undefined>;
   positioner?: Accessor<U>;
   size?: number;
   center?: boolean;

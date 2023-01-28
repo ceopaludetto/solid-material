@@ -1,11 +1,11 @@
 import { cva } from "class-variance-authority";
 
-export const overlay = cva(["fixed inset-0 bg-scrim"]);
+export const overlay = cva(["fixed inset-0 bg-scrim/20"]);
 
 export const positioner = cva(["fixed inset-0 flex items-center justify-center"]);
 
 export const content = cva([
-  "flex min-w-[280px] max-w-[560px] flex-col items-center gap-4 rounded-xl bg-surface p-6 surface surface-3",
+  "flex min-w-[280px] max-w-[560px] flex-col items-center gap-4 rounded-xl bg-surface p-6 outline-none surface surface-3",
 ]);
 
 export const icon = cva(["text-icon-medium text-secondary reset-svg"]);
