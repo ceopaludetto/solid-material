@@ -1,5 +1,12 @@
 # @solidjs-material/configuration
 
+## 0.0.4
+
+### Patch Changes
+
+- 656fac5: Add dialog component
+  Fix ref handling
+
 ## 0.0.3
 
 ### Patch Changes
