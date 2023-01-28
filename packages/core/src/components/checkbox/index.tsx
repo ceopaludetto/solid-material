@@ -1,5 +1,6 @@
 import type { As, PolymorphicProps } from "@kobalte/utils";
 import type { VariantProps } from "class-variance-authority";
+import type { JSX } from "solid-js";
 
 import { Checkbox as KCheckbox } from "@kobalte/core";
 import { createSignal, Show, splitProps } from "solid-js";
@@ -16,7 +17,7 @@ type CheckboxOwnProps = KCheckbox.CheckboxRootOptions &
     class?: string;
   };
 
-export type CheckboxProps<T extends As> = PolymorphicProps<T, CheckboxOwnProps>;
+export type CheckboxProps<T extends As = "label"> = PolymorphicProps<T, CheckboxOwnProps>;
 
 export function Checkbox<T extends As = "label">(props: CheckboxProps<T>) {
   const [ref, getRef] = createSignal<HTMLLabelElement>();

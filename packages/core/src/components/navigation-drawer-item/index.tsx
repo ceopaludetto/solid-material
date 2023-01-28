@@ -8,7 +8,7 @@ import { content, icon, root } from "./styles";
 import { createRipples } from "~/primitives";
 import { mergeWithRefs } from "~/utils/refs";
 
-type NavigationDrawerItemOwnProps = {
+type NavigationDrawerItemOwnProps = KLink.LinkRootOptions & {
   class?: string;
   active?: boolean;
   icon: JSX.Element;

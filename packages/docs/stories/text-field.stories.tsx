@@ -1,3 +1,4 @@
+import type { TextFieldProps } from "@solidjs-material/core";
 import type { Meta, StoryObj } from "@storybook/html";
 
 import { TextField, IconButton } from "@solidjs-material/core";
@@ -5,24 +6,25 @@ import { Eye, User, X } from "lucide-solid";
 
 export default {
   title: "TextField",
-  render: (props) => <TextField label="E-mail" {...props} />,
-} as Meta<typeof TextField>;
+  args: { label: "E-mail" },
+  render: (props) => <TextField {...props} />,
+} as Meta<TextFieldProps>;
 
-export const Default: StoryObj<typeof TextField> = {};
+export const Default: StoryObj<TextFieldProps> = {};
 
-export const DefaultValue: StoryObj<typeof TextField> = {
+export const DefaultValue: StoryObj<TextFieldProps> = {
   args: { defaultValue: "some@example.com" },
 };
 
-export const Disabled: StoryObj<typeof TextField> = {
+export const Disabled: StoryObj<TextFieldProps> = {
   args: { isDisabled: true, defaultValue: "some@example.com" },
 };
 
-export const WithDescription: StoryObj<typeof TextField> = {
+export const WithDescription: StoryObj<TextFieldProps> = {
   args: { description: "Supporting Text" },
 };
 
-export const WithError: StoryObj<typeof TextField> = {
+export const WithError: StoryObj<TextFieldProps> = {
   args: {
     description: "Invalid!",
     validationState: "invalid",
@@ -31,7 +33,7 @@ export const WithError: StoryObj<typeof TextField> = {
   },
 };
 
-export const WithAdornment: StoryObj<typeof TextField> = {
+export const WithAdornment: StoryObj<TextFieldProps> = {
   args: {
     startAdornment: () => <User />,
     endAdornment: () => (

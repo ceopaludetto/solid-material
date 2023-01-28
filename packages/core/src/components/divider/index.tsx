@@ -5,7 +5,7 @@ import { splitProps } from "solid-js";
 
 import { root } from "./styles";
 
-type DividerOwnProps = {
+type DividerOwnProps = KSeparator.SeparatorRootOptions & {
   class?: string;
 };
 

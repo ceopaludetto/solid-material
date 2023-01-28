@@ -1,3 +1,4 @@
+import type { NavigationItemProps } from "@solidjs-material/core";
 import type { Meta, StoryObj } from "@storybook/html";
 
 import { NavigationItem } from "@solidjs-material/core";
@@ -7,10 +8,10 @@ export default {
   title: "NavigationItem",
   args: { children: "Home", icon: () => <Home /> },
   render: (props) => <NavigationItem {...props} />,
-} as Meta<typeof NavigationItem>;
+} as Meta<NavigationItemProps>;
 
-export const Default: StoryObj<typeof NavigationItem> = {};
+export const Default: StoryObj<NavigationItemProps> = {};
 
-export const Active: StoryObj<typeof NavigationItem> = {
+export const Active: StoryObj<NavigationItemProps> = {
   args: { active: true },
 };

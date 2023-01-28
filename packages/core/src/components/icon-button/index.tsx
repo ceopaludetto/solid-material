@@ -9,10 +9,11 @@ import { root } from "./styles";
 import { createRipples } from "~/primitives";
 import { mergeWithRefs } from "~/utils/refs";
 
-type IconButtonOwnProps = VariantProps<typeof root> & {
-  class?: string;
-  children: JSX.Element;
-};
+type IconButtonOwnProps = KButton.ButtonRootOptions &
+  VariantProps<typeof root> & {
+    class?: string;
+    children: JSX.Element;
+  };
 
 export type IconButtonProps<T extends As = "button"> = PolymorphicProps<T, IconButtonOwnProps>;
 

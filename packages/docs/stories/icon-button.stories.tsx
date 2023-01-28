@@ -1,3 +1,4 @@
+import type { IconButtonProps } from "@solidjs-material/core";
 import type { Meta, StoryObj } from "@storybook/html";
 
 import { IconButton } from "@solidjs-material/core";
@@ -7,14 +8,14 @@ export default {
   title: "IconButton",
   args: { children: () => <Heart />, "aria-label": "Favorite" },
   render: (props) => <IconButton {...props} />,
-} as Meta<typeof IconButton>;
+} as Meta<IconButtonProps>;
 
-export const Default: StoryObj<typeof IconButton> = {};
+export const Default: StoryObj<IconButtonProps> = {};
 
-export const Tonal: StoryObj<typeof IconButton> = {
+export const Tonal: StoryObj<IconButtonProps> = {
   args: { variant: "tonal" },
 };
 
-export const Disabled: StoryObj<typeof IconButton> = {
+export const Disabled: StoryObj<IconButtonProps> = {
   args: { isDisabled: true },
 };

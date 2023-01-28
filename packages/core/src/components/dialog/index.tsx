@@ -1,4 +1,5 @@
 import type { As, PolymorphicProps } from "@kobalte/utils";
+import type { JSX } from "solid-js";
 
 import { Dialog as KDialog } from "@kobalte/core";
 import { Show, splitProps } from "solid-js";
