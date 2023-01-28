@@ -27,5 +27,6 @@ module.exports = {
     ],
     // misc
     "no-restricted-syntax": "off",
+    "no-continue": "off",
   },
 };
