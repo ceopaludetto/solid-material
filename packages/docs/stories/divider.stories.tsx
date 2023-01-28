@@ -1,3 +1,4 @@
+import type { DividerProps } from "@solidjs-material/core";
 import type { Meta, StoryObj } from "@storybook/html";
 
 import { Divider } from "@solidjs-material/core";
@@ -9,10 +10,10 @@ export default {
       <Divider {...props} />
     </div>
   ),
-} as Meta<typeof Divider>;
+} as Meta<DividerProps>;
 
-export const Default: StoryObj<typeof Divider> = {};
+export const Default: StoryObj<DividerProps> = {};
 
-export const Vertical: StoryObj<typeof Divider> = {
+export const Vertical: StoryObj<DividerProps> = {
   args: { orientation: "vertical" },
 };

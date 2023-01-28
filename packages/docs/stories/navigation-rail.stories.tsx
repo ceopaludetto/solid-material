@@ -1,3 +1,4 @@
+import type { NavigationRailProps } from "@solidjs-material/core";
 import type { Meta, StoryObj } from "@storybook/html";
 
 import { NavigationRail, NavigationItem, FAB, IconButton } from "@solidjs-material/core";
@@ -21,15 +22,15 @@ export default {
       </NavigationRail>
     </div>
   ),
-} as Meta<typeof NavigationRail>;
+} as Meta<NavigationRailProps>;
 
-export const Default: StoryObj<typeof NavigationRail> = {};
+export const Default: StoryObj<NavigationRailProps> = {};
 
-export const WithFAB: StoryObj<typeof NavigationRail> = {
+export const WithFAB: StoryObj<NavigationRailProps> = {
   args: { startAdornment: () => <FAB aria-label="Add" variant="tertiary" icon={<Plus />} /> },
 };
 
-export const WithMenu: StoryObj<typeof NavigationRail> = {
+export const WithMenu: StoryObj<NavigationRailProps> = {
   args: {
     startAdornment: () => (
       <IconButton aria-label="Menu" variant="standard">
@@ -39,7 +40,7 @@ export const WithMenu: StoryObj<typeof NavigationRail> = {
   },
 };
 
-export const Combined: StoryObj<typeof NavigationRail> = {
+export const Combined: StoryObj<NavigationRailProps> = {
   args: {
     startAdornment: () => (
       <>

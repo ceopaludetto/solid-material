@@ -1,3 +1,4 @@
+import type { NavigationDrawerProps } from "@solidjs-material/core";
 import type { Meta, StoryObj } from "@storybook/html";
 
 import { NavigationDrawer, NavigationDrawerItem, FAB, IconButton } from "@solidjs-material/core";
@@ -21,11 +22,11 @@ export default {
       </NavigationDrawer>
     </div>
   ),
-} as Meta<typeof NavigationDrawer>;
+} as Meta<NavigationDrawerProps>;
 
-export const Default: StoryObj<typeof NavigationDrawer> = {};
+export const Default: StoryObj<NavigationDrawerProps> = {};
 
-export const WithFAB: StoryObj<typeof NavigationDrawer> = {
+export const WithFAB: StoryObj<NavigationDrawerProps> = {
   args: {
     startAdornment: () => (
       <FAB aria-label="Add" variant="tertiary" icon={<Plus />}>
@@ -35,7 +36,7 @@ export const WithFAB: StoryObj<typeof NavigationDrawer> = {
   },
 };
 
-export const WithMenu: StoryObj<typeof NavigationDrawer> = {
+export const WithMenu: StoryObj<NavigationDrawerProps> = {
   args: {
     startAdornment: () => (
       <IconButton aria-label="Menu" variant="standard">
@@ -45,7 +46,7 @@ export const WithMenu: StoryObj<typeof NavigationDrawer> = {
   },
 };
 
-export const Combined: StoryObj<typeof NavigationDrawer> = {
+export const Combined: StoryObj<NavigationDrawerProps> = {
   args: {
     startAdornment: () => (
       <>
