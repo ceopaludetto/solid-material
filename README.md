@@ -52,6 +52,7 @@ export function App() {
 - [ ] Chip
 - [ ] Date Pickers
 - [x] Divider
+- [x] Dialog
 - [ ] List
 - [ ] Menu
 - [x] FAB

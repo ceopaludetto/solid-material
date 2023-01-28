@@ -7,6 +7,7 @@ import { Show, splitProps } from "solid-js";
 
 import { icon, root } from "./styles";
 import { createRipples } from "~/primitives";
+import { mergeWithRefs } from "~/utils/refs";
 
 type ButtonOwnProps = KButton.ButtonRootOptions &
   Omit<VariantProps<typeof root>, "hasEndIcon" | "hasStartIcon"> & {
@@ -26,14 +27,13 @@ export function Button<T extends As = "button">(props: ButtonProps<T>) {
 
   return (
     <KButton.Root
-      ref={ref}
       class={root({
         class: local.class,
         variant: local.variant ?? "filled",
         hasStartIcon: !!local.startIcon,
         hasEndIcon: !!local.endIcon,
       })}
-      {...rest}
+      {...mergeWithRefs(ref, rest)}
     >
       <Show when={!!local.startIcon}>
         <span class={icon()}>{local.startIcon}</span>
