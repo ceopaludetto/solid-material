@@ -1,5 +1,12 @@
 # @solidjs-material/core
 
+## 0.0.7
+
+### Patch Changes
+
+- 4d6e807: Add missing types
+  Fix storybook stories
+
 ## 0.0.6
 
 ### Patch Changes
