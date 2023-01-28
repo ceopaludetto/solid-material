@@ -1,13 +1,9 @@
-import type { Accessor } from "solid-js";
-
 import { createSignal, onCleanup, onMount } from "solid-js";
 
 import { cancelRippleAnimation, centerElementToPointer, completedFactor, createRipple, duration } from "./utils";
 import { applyClasses, filterKeyboardEvent, filterMouseEvent, isKeyboardEvent, isTouchDevice } from "~/utils/dom";
 
-export type RippleOptions<T extends HTMLElement = HTMLElement, U extends HTMLElement = T> = {
-  ref: Accessor<T | undefined>;
-  positioner?: Accessor<U>;
+export type RippleOptions = {
   size?: number;
   center?: boolean;
   disabled?: boolean;
@@ -29,16 +25,17 @@ const className = "solid-material--ripple";
  * @returns void
  */
 export function createRipples<T extends HTMLElement = HTMLElement, U extends HTMLElement = T>({
-  ref,
-  positioner = ref as unknown as Accessor<U>,
   disabled,
   size,
   center,
-}: RippleOptions<T, U>) {
+}: RippleOptions) {
+  const [trigger, getTrigger] = createSignal<T>();
+  const [positioner, getPositioner] = createSignal<U>();
+
   const [pressing, setPressing] = createSignal(false);
 
   function onPointerDown(event: KeyboardEvent | PointerEvent) {
-    const target = positioner();
+    const target = positioner() ?? trigger();
     const fromKeyboard = isKeyboardEvent(event);
 
     if (!target || disabled || pressing() || !filterMouseEvent(event) || !filterKeyboardEvent(event)) return;
@@ -72,6 +69,8 @@ export function createRipples<T extends HTMLElement = HTMLElement, U extends HTM
     });
   }
 
-  onMount(() => startEvents.forEach((event) => ref()?.addEventListener(event, onPointerDown)));
-  onCleanup(() => startEvents.forEach((event) => ref()?.removeEventListener(event, onPointerDown)));
+  onMount(() => startEvents.forEach((event) => trigger()?.addEventListener(event, onPointerDown)));
+  onCleanup(() => startEvents.forEach((event) => trigger()?.removeEventListener(event, onPointerDown)));
+
+  return [getTrigger, getPositioner] as const;
 }

@@ -3,7 +3,7 @@ import type { VariantProps } from "class-variance-authority";
 import type { JSX } from "solid-js";
 
 import { Button as KButton } from "@kobalte/core";
-import { createSignal, Show, splitProps } from "solid-js";
+import { Show, splitProps } from "solid-js";
 
 import { icon, root } from "./styles";
 import { createRipples } from "~/primitives";
@@ -20,9 +20,7 @@ type ButtonOwnProps = KButton.ButtonRootOptions &
 export type ButtonProps<T extends As = "button"> = PolymorphicProps<T, ButtonOwnProps>;
 
 export function Button<T extends As = "button">(props: ButtonProps<T>) {
-  const [ref, getRef] = createSignal<HTMLButtonElement>();
-
-  createRipples({ ref, disabled: props.isDisabled });
+  const [trigger] = createRipples({ disabled: props.isDisabled });
   const [local, rest] = splitProps(props, ["class", "children", "variant", "startIcon", "endIcon"]);
 
   return (
@@ -33,7 +31,7 @@ export function Button<T extends As = "button">(props: ButtonProps<T>) {
         hasStartIcon: !!local.startIcon,
         hasEndIcon: !!local.endIcon,
       })}
-      {...mergeWithRefs(getRef, rest)}
+      {...mergeWithRefs(trigger, rest)}
     >
       <Show when={!!local.startIcon}>
         <span class={icon()}>{local.startIcon}</span>

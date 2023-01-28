@@ -11,7 +11,6 @@ export function mergeRefs<T extends HTMLElement>(...refs: Ref<T>[]) {
       }
 
       ref = el;
-      return;
     }
   };
 }
