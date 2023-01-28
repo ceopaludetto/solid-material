@@ -32,9 +32,9 @@ function Content<T extends As = "div">(props: DialogContentProps<T>) {
             </Show>
             <KDialog.Title class={title()}>{local.title}</KDialog.Title>
             <KDialog.Description class={description()}>{local.description}</KDialog.Description>
-            <div class={actions()}>
-              <Show when={!!local.endAdornment}>{local.endAdornment}</Show>
-            </div>
+            <Show when={!!local.endAdornment}>
+              <div class={actions()}>{local.endAdornment}</div>
+            </Show>
           </KDialog.Content>
         </div>
       </KDialog.Portal>
