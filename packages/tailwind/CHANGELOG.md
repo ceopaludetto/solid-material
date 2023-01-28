@@ -1,5 +1,11 @@
 # @solidjs-material/tailwind
 
+## 0.0.5
+
+### Patch Changes
+
+- a99edda: Add checkbox component
+
 ## 0.0.4
 
 ### Patch Changes

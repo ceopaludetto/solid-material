@@ -1,5 +1,16 @@
 # @solidjs-material/docs
 
+## 0.0.5
+
+### Patch Changes
+
+- 656fac5: Add dialog component
+  Fix ref handling
+- a99edda: Add checkbox component
+- Updated dependencies [656fac5]
+- Updated dependencies [a99edda]
+  - @solidjs-material/core@0.0.6
+
 ## 0.0.4
 
 ### Patch Changes
