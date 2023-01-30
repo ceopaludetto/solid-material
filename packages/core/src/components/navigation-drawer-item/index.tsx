@@ -2,7 +2,7 @@ import type { As, PolymorphicProps } from "@kobalte/utils";
 import type { JSX } from "solid-js";
 
 import { Link as KLink } from "@kobalte/core";
-import { splitProps } from "solid-js";
+import { Show, splitProps } from "solid-js";
 
 import { content, icon, root } from "./styles";
 import { createRipples } from "~/primitives";
@@ -11,7 +11,7 @@ import { mergeWithRefs } from "~/utils/refs";
 type NavigationDrawerItemOwnProps = KLink.LinkRootOptions & {
   class?: string;
   active?: boolean;
-  icon: JSX.Element;
+  icon?: JSX.Element;
   children: JSX.Element;
 };
 
@@ -23,7 +23,9 @@ export function NavigationDrawerItem<T extends As = "a">(props: NavigationDrawer
 
   return (
     <KLink.Root class={root({ class: local.class, active: local.active })} {...mergeWithRefs(trigger, rest)}>
-      <span class={icon()}>{local.icon}</span>
+      <Show when={!!local.icon}>
+        <span class={icon()}>{local.icon}</span>
+      </Show>
       <div class={content()}>{local.children}</div>
     </KLink.Root>
   );
