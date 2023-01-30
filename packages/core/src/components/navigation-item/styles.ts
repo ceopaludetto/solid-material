@@ -21,6 +21,6 @@ export const content = cva([
 ]);
 
 export const icon = cva([
-  "inline-flex aspect-[7/4] h-8 items-center justify-center rounded-full text-icon-medium state-layer reset-svg ripple",
+  "inline-flex aspect-[7/4] h-8 items-center justify-center rounded-full text-icon-medium state-layer ripple reset-svg",
   "group-ui-in-route/link:bg-secondary-container group-ui-in-route/link:text-on-secondary-container group-ui-not-in-route/link:text-on-surface-variant",
 ]);

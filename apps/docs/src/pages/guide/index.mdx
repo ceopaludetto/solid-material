@@ -1,0 +1,128 @@
+---
+title: Getting Started
+layout: ~/layouts/docs.astro
+---
+
+# {frontmatter.title}
+
+Quick guide to start using Solid Material.
+
+## Installation
+
+Install the base package which contains every component:
+
+```bash
+npm install @solidjs-material/core
+```
+
+Install tailwind package which contains the design system:
+
+```bash
+npm install @solidjs-material/tailwind --save-dev
+```
+
+## Adding Tailwindcss preset
+
+Tailwindcss need to find Solid Material components in package dist folder.
+
+```js
+const { designSystem } = require("@solidjs-material/tailwind");
+
+module.exports = {
+  content: ["./node_modules/@solidjs-material/core/dist/*.{js,cjs}", "./src/**/*.tsx"],
+  presets: [designSystem({ baseColor: "#FACADA" })], // Try another colors!
+};
+```
+
+## Adding icons
+
+You can use any icon library that you want.
+
+### Using [Solid Icons](https://solid-icons.vercel.app/)
+
+Start adding solid-icons to your project:
+
+```bash
+npm install solid-icons
+```
+
+Import some icons to your source code:
+
+```tsx
+import { Button } from "@solidjs-material/core";
+import { FiHeart } from "solid-icons/fi";
+
+function App() {
+  return <Button startIcon={() => <FiHeart />}>Sponsor</Button>;
+}
+```
+
+### Using [Unplugin Icons](https://github.com/antfu/unplugin-icons)
+
+Follow [unplugin guides](https://github.com/antfu/unplugin-icons#configuration) to add support to your bundler/framework.
+
+Install you desired icon pack:
+
+```bash
+npm install @iconify-json/iconoir --save-dev
+```
+
+Use `compiler: solid` option in plugin:
+
+```js
+icons({ compiler: "solid" });
+```
+
+If you use typescript, add the following configuration on your tsconfig.json:
+
+```json
+{
+  "compilerOptions": {
+    "types": ["unplugin-icons/types/solid"]
+  }
+}
+```
+
+Import some icons to your source code:
+
+```tsx
+import { Button } from "@solidjs-material/core";
+import Heart from "virtual:icons/iconoir/heart";
+
+function App() {
+  return <Button startIcon={() => <Heart />}>Sponsor</Button>;
+}
+```
+
+## Adding custom webfonts
+
+Solid Material is designed to use any google font that you may want. You can install them using [Fontsource](https://fontsource.org/).
+
+```bash
+npm install @fontsource/poppins
+```
+
+Import font variants in your source code:
+
+```tsx
+import "@fontsource/poppins";
+```
+
+Modify Tailwindcss configuration to use the installed webfont:
+
+```js
+const { designSystem } = require("@solidjs-material/tailwind");
+const defaultTheme = require("tailwindcss/defaultTheme");
+
+module.exports = {
+  content: ["./node_modules/@solidjs-material/core/dist/*.{js,cjs}", "./src/**/*.tsx"],
+  presets: [designSystem({ baseColor: "#FACADA" })], // Try another colors!
+  theme: {
+    extend: {
+      fontFamily: {
+        sans: ["Poppins", ...defaultTheme.fontFamily.sans],
+      },
+    },
+  },
+};
+```

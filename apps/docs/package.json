@@ -1,0 +1,30 @@
+{
+  "name": "@solidjs-material/docs",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "astro": "astro",
+    "build": "astro build",
+    "dev": "astro dev",
+    "lint": "eslint \"src/**/*.{ts,tsx,astro}\" --fix",
+    "preview": "astro preview",
+    "start": "astro dev"
+  },
+  "dependencies": {
+    "@fontsource/poppins": "^4.5.10",
+    "@solidjs-material/core": "workspace:^0.0.7",
+    "solid-icons": "^1.0.4",
+    "solid-js": "^1.4.3",
+    "tailwindcss": "^3.0.24"
+  },
+  "devDependencies": {
+    "@astrojs/mdx": "^0.15.1",
+    "@astrojs/solid-js": "^2.0.0",
+    "@astrojs/tailwind": "^3.0.0",
+    "@solidjs-material/configuration": "workspace:^0.0.4",
+    "@solidjs-material/tailwind": "workspace:^0.0.5",
+    "@tailwindcss/typography": "^0.5.9",
+    "astro": "^2.0.2"
+  }
+}

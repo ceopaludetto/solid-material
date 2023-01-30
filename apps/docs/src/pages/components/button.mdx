@@ -1,0 +1,65 @@
+---
+title: Button
+layout: ~/layouts/docs.astro
+---
+
+import Playground from "~/components/playground.astro";
+import { BasicExample, DisabledExample, IconsExample } from "~/components/examples/button";
+
+# {frontmatter.title}
+
+Buttons allow users to take actions with a single tap.
+
+## Basic usage
+
+The `Button` comes with four variants: filled, tonal, outlined and text.
+
+<Playground>
+  <BasicExample client:load />
+  <div slot="code">
+    ```tsx
+    <Button>Save</Button>
+    <Button variant="tonal">Save</Button>
+    <Button variant="outlined">Save</Button>
+    <Button variant="text">Save</Button>
+    ```
+  </div>
+</Playground>
+
+## Adding icons
+
+You can add icons by supplying `startIcon` and `endIcon` props:
+
+<Playground>
+  <IconsExample client:load />
+  <div slot="code">
+    ```tsx
+    <Button startIcon={<Heart />}>Save</Button>
+    <Button endIcon={<Heart />}>Save</Button>
+    ```
+  </div>
+</Playground>
+
+## States
+
+### Disabled
+
+You can disable the `Button` using the `isDisabled` prop:
+
+<Playground>
+  <DisabledExample />
+  <div slot="code">
+    ```tsx
+    <Button isDisabled>Save</Button>
+    <Button variant="tonal" isDisabled>
+      Save
+    </Button>
+    <Button variant="outlined" isDisabled>
+      Save
+    </Button>
+    <Button variant="text" isDisabled>
+      Save
+    </Button>
+    ```
+  </div>
+</Playground>
