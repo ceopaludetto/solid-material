@@ -15,8 +15,8 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: checkout repository
-        uses: actions/checkout@v3
+      - name: build deps
+        uses: ./.github/workflows/ci.yml
 
       - name: install and build
         uses: withastro/action@v0
