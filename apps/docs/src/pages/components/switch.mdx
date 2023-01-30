@@ -1,0 +1,40 @@
+---
+title: Switch
+layout: ~/layouts/docs.astro
+---
+
+import Playground from "~/components/playground.astro";
+import { BasicExample, DisabledExample } from "~/components/examples/switch";
+
+# {frontmatter.title}
+
+Switches toggle the state of a single setting on or off.
+
+## Basic usage
+
+The `Switch` needs a label.
+
+<Playground>
+  <BasicExample client:load />
+  <div slot="code">
+    ```tsx
+    <Switch label="Dark theme" />
+    ```
+  </div>
+</Playground>
+
+## States
+
+### Disabled
+
+You can disable the `Switch` using the `isDisabled` prop:
+
+<Playground>
+  <DisabledExample client:load />
+  <div slot="code">
+    ```tsx
+    <Switch label="Dark theme" isDisabled />
+    <Switch label="Dark theme" defaultIsChecked isDisabled />
+    ```
+  </div>
+</Playground>

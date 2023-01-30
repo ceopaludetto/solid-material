@@ -22,7 +22,7 @@ function Content<T extends As = "div">(props: DialogContentProps<T>) {
 
   return (
     <KDialog.Root {...rest}>
-      <Show when={local.children}>{local.children}</Show>
+      <Show when={!!local.children}>{local.children}</Show>
       <KDialog.Portal>
         <KDialog.Overlay class={overlay()} />
         <div class={positioner()}>

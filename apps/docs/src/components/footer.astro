@@ -1,0 +1,15 @@
+---
+import { Divider } from "@solidjs-material/core";
+
+export interface Props {
+  tight?: boolean;
+}
+
+const { tight } = Astro.props;
+---
+
+<Divider class="my-0" class:list={{ "mt-8": tight, "my-0": true }} />
+<footer class:list={["not-prose text-center text-on-surface", { "p-8": !tight, "p-4": tight }]}>
+  <p>Released under the MIT License.</p>
+  <p>Copyright © 2023-PRESENT Carlos Paludetto and Solid Material contributors</p>
+</footer>

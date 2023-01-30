@@ -1,0 +1,63 @@
+---
+import { Button, Card } from "@solidjs-material/core";
+
+import Layout from "~/layouts/layout.astro";
+
+const cards = [
+  {
+    title: "Made with SolidJS",
+    content: "Simple and performant reactivity for building user interfaces.",
+    image: "/solid.svg",
+  },
+  {
+    title: "Following Material You",
+    content: "Design and build beautiful, usable products with Material 3.",
+    image: "/material.svg",
+  },
+  {
+    title: "TailwindCSS Powered",
+    content: "Rapidly build modern websites without ever leaving your HTML.",
+    image: "/tailwindcss.svg",
+  },
+];
+---
+
+<Layout title="Solid Material" description="High quality solid-js components at ease.">
+  <main>
+    <section class="container mx-auto flex flex-col items-center gap-6 px-4 py-12 text-center">
+      <h1 class="text-display-medium font-bold">
+        <span class="text-primary">SolidMaterial</span><br />
+        High quality components at ease.
+      </h1>
+      <h2 class="text-on-surface-variant">Quickly build interfaces following Material You guidelines.</h2>
+      <div class="flex items-center gap-2">
+        <Button as="a" href="/guide" client:load>Get Started</Button>
+        <Button
+          as="a"
+          href="https://www.github.com/ceopaludetto/solid-material"
+          target="_blank"
+          rel="noopener noreferrer"
+          variant="tonal"
+          client:load
+        >
+          View on GitHub
+        </Button>
+      </div>
+    </section>
+    <section class="container mx-auto grid grid-cols-1 items-stretch gap-4 px-4 py-8 lg:grid-cols-3">
+      {
+        cards.map((card) => (
+          <Card class="flex flex-col items-start p-4">
+            {card.image && (
+              <div class="rounded-sm bg-surface p-2">
+                <img src={card.image} class="aspect-square h-12 object-contain" />
+              </div>
+            )}
+            <p class="my-2 text-title-medium font-bold">{card.title}</p>
+            <p>{card.content}</p>
+          </Card>
+        ))
+      }
+    </section>
+  </main>
+</Layout>

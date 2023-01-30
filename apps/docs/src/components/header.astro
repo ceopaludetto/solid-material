@@ -1,0 +1,23 @@
+---
+import { IconButton } from "@solidjs-material/core";
+import { AiOutlineGithub } from "solid-icons/ai";
+---
+
+<header class="sticky top-0 z-50 flex items-center px-6 py-4 backdrop-blur-md">
+  <div class="flex-1">
+    <a href="/" class="text-title-medium">Solid<span class="text-primary">Material</span></a>
+  </div>
+  <div class="flex items-center">
+    <IconButton
+      as="a"
+      href="https://www.github.com/ceopaludetto/solid-material"
+      target="_blank"
+      rel="noopener noreferrer"
+      variant="tonal"
+      aria-label="GitHub"
+      client:load
+    >
+      {() => <AiOutlineGithub />}
+    </IconButton>
+  </div>
+</header>

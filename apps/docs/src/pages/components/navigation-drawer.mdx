@@ -1,0 +1,73 @@
+---
+title: NavigationDrawer
+layout: ~/layouts/docs.astro
+---
+
+import Playground from "~/components/playground.astro";
+import { BasicExample, ActiveExample, AdornmentExample } from "~/components/examples/navigation-drawer";
+
+# {frontmatter.title}
+
+Navigation drawers provide access to destinations in your app in large sized devices.
+
+## Basic usage
+
+The `NavigationDrawer` must be composed with `NavigationDrawerItem`:
+
+<Playground>
+  <BasicExample client:load />
+  <div slot="code">
+    ```tsx
+    <NavigationDrawer class="max-w-[300px]">
+      <NavigationDrawerItem icon={() => <Home />}>Home</NavigationDrawerItem>
+      <NavigationDrawerItem icon={() => <Settings />}>Settings</NavigationDrawerItem>
+    </NavigationDrawer>
+    ```
+  </div>
+</Playground>
+
+## Setting active location
+
+By default `NavigationDrawerItem` will listen to `active` class, but you could also supply `active` prop:
+
+<Playground>
+  <ActiveExample client:load />
+  <div slot="code">
+    ```tsx
+    <NavigationDrawer class="max-w-[300px]">
+      <NavigationDrawerItem active icon={() => <Home />}>
+        Home
+      </NavigationDrawerItem>
+      <NavigationDrawerItem icon={() => <Settings />}>Settings</NavigationDrawerItem>
+    </NavigationDrawer>
+    ```
+  </div>
+</Playground>
+
+## Adding adornments
+
+You could also supply `startAdornment` prop to add leading components:
+
+<Playground>
+  <AdornmentExample client:load />
+  <div slot="code">
+    ```tsx
+    <NavigationDrawer
+      class="max-w-[300px]"
+      startAdornment={() => (
+        <>
+          <IconButton variant="standard">
+            <Menu />
+          </IconButton>
+          <FAB variant="tertiary" icon={() => <Plus />}>
+            Add
+          </FAB>
+        </>
+      )}
+    >
+      <NavigationDrawerItem icon={() => <Home />}>Home</NavigationDrawerItem>
+      <NavigationDrawerItem icon={() => <Settings />}>Settings</NavigationDrawerItem>
+    </NavigationDrawer>
+    ```
+  </div>
+</Playground>

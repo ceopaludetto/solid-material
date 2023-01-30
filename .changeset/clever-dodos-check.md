@@ -1,6 +1,7 @@
 ---
 "@solidjs-material/configuration": patch
 "@solidjs-material/core": patch
+"@solidjs-material/docs": patch
 ---
 
-Fix some style inconsistances
+Add new docs

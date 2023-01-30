@@ -1,21 +1,25 @@
-name: Release
+name: CI
 
 on:
   push:
     branches: [main]
+  pull_request:
+    types: [opened, synchronize]
 
 env:
   PNPM_CACHE_FOLDER: .pnpm-store
 
 jobs:
-  version:
-    name: Release
+  build:
+    name: Build and Test
+    timeout-minutes: 15
     runs-on: ubuntu-latest
+
     steps:
       - name: checkout repository
         uses: actions/checkout@v3
         with:
-          fetch-depth: 0
+          fetch-depth: 2
 
       - name: setup caching
         uses: actions/cache@v2
@@ -36,27 +40,11 @@ jobs:
           node-version: 16.x
           cache: "pnpm"
 
-      - name: setup .npmrc
-        run: |
-          cat << EOF > "$HOME/.npmrc"
-            //registry.npmjs.org/:_authToken=$NPM_TOKEN
-          EOF
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
       - name: setup pnpm config
         run: pnpm config set store-dir $PNPM_CACHE_FOLDER
 
       - name: install dependencies
         run: pnpm i
 
-      - name: create version PR & prepare publish
-        uses: changesets/action@v1
-        with:
-          version: pnpm ci:version
-          publish: pnpm ci:publish
-          commit: "chore(deploy): release"
-          title: "chore(deploy): release"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: build
+        run: pnpm build

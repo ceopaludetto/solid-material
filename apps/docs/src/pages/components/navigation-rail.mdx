@@ -1,0 +1,70 @@
+---
+title: NavigationRail
+layout: ~/layouts/docs.astro
+---
+
+import Playground from "~/components/playground.astro";
+import { BasicExample, ActiveExample, AdornmentExample } from "~/components/examples/navigation-rail";
+
+# {frontmatter.title}
+
+Navigation rails provide access to destinations in your app in medium sized devices.
+
+## Basic usage
+
+The `NavigationRail` must be composed with `NavigationItem`:
+
+<Playground>
+  <BasicExample client:load />
+  <div slot="code">
+    ```tsx
+    <NavigationRail>
+      <NavigationItem icon={() => <Home />}>Home</NavigationItem>
+      <NavigationItem icon={() => <Settings />}>Settings</NavigationItem>
+    </NavigationRail>
+    ```
+  </div>
+</Playground>
+
+## Setting active location
+
+By default `NavigationItem` will listen to `active` class, but you could also supply `active` prop:
+
+<Playground>
+  <ActiveExample client:load />
+  <div slot="code">
+    ```tsx
+    <NavigationRail>
+      <NavigationItem active icon={() => <Home />}>
+        Home
+      </NavigationItem>
+      <NavigationItem icon={() => <Settings />}>Settings</NavigationItem>
+    </NavigationRail>
+    ```
+  </div>
+</Playground>
+
+## Adding adornments
+
+You could also supply `startAdornment` prop to add leading components:
+
+<Playground>
+  <AdornmentExample client:load />
+  <div slot="code">
+    ```tsx
+    <NavigationRail
+      startAdornment={() => (
+        <>
+          <IconButton variant="standard">
+            <Menu />
+          </IconButton>
+          <FAB variant="tertiary" icon={() => <Plus />} />
+        </>
+      )}
+    >
+      <NavigationItem icon={() => <Home />}>Home</NavigationItem>
+      <NavigationItem icon={() => <Settings />}>Settings</NavigationItem>
+    </NavigationRail>
+    ```
+  </div>
+</Playground>
