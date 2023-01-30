@@ -1,8 +1,8 @@
 {
-  "tailwindCSS.experimental.configFile": "packages/docs/tailwind.config.cjs",
+  "tailwindCSS.experimental.configFile": "apps/docs/tailwind.config.cjs",
   "tailwindCSS.experimental.classRegex": [["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]],
 
-  "eslint.workingDirectories": ["packages/*"],
+  "eslint.workingDirectories": ["packages/*", "apps/*"],
 
   "editor.codeActionsOnSave": {
     "source.fixAll": true

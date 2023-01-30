@@ -5,7 +5,7 @@ import type { JSX } from "solid-js";
 import { Checkbox as KCheckbox } from "@kobalte/core";
 import { Show, splitProps } from "solid-js";
 
-import { control, indicator, root } from "./styles";
+import { control, indicator, label, root } from "./styles";
 import { createRipples } from "~/primitives";
 import { mergeWithRefs } from "~/utils/refs";
 
@@ -29,7 +29,7 @@ export function Checkbox<T extends As = "label">(props: CheckboxProps<T>) {
       {...mergeWithRefs(trigger, rest)}
     >
       <KCheckbox.Input />
-      <KCheckbox.Label>{local.label}</KCheckbox.Label>
+      <KCheckbox.Label class={label()}>{local.label}</KCheckbox.Label>
       <KCheckbox.Control ref={positioner} class={control()}>
         <KCheckbox.Indicator forceMount class={indicator()}>
           <Show when={!props.isIndeterminate}>{local.checkIcon}</Show>

@@ -4,7 +4,7 @@ import type { VariantProps } from "class-variance-authority";
 import { Switch as KSwitch } from "@kobalte/core";
 import { splitProps } from "solid-js";
 
-import { control, root, thumb } from "./styles";
+import { control, label, root, thumb } from "./styles";
 import { createRipples } from "~/primitives";
 import { mergeWithRefs } from "~/utils/refs";
 
@@ -26,7 +26,7 @@ export function Switch<T extends As = "label">(props: SwitchProps<T>) {
       {...mergeWithRefs(trigger, rest)}
     >
       <KSwitch.Input />
-      <KSwitch.Label>{local.label}</KSwitch.Label>
+      <KSwitch.Label class={label()}>{local.label}</KSwitch.Label>
       <KSwitch.Control class={control()}>
         <KSwitch.Thumb ref={positioner} class={thumb()} />
       </KSwitch.Control>

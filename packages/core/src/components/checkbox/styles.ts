@@ -17,8 +17,10 @@ export const root = cva(
   },
 );
 
+export const label = cva(["text-on-surface"]);
+
 export const control = cva([
-  "relative isolate aspect-square h-[18px] rounded-xxs border-on-surface state-layer state-layer-10 ui-not-checked:border-2",
+  "relative isolate inline-flex aspect-square h-[18px] rounded-xxs border-on-surface state-layer state-layer-10 ui-not-checked:border-2",
   "ui-disabled:border-on-surface/38 ui-disabled:ui-checked:bg-on-surface/38 ui-not-disabled:ui-checked:bg-primary",
 ]);
 

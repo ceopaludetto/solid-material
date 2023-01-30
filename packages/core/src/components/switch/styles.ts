@@ -17,6 +17,8 @@ export const root = cva(
   },
 );
 
+export const label = cva(["text-on-surface"]);
+
 export const control = cva([
   "inline-flex aspect-[13/8] h-8 items-center rounded-full border-2 border-outline transition duration-short4 ease-emphasized",
   "ui-checked:border-primary ui-checked:bg-primary ui-not-checked:bg-surface-variant",
