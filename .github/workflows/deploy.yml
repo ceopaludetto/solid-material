@@ -10,13 +10,46 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  PNPM_CACHE_FOLDER: .pnpm-store
+
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: build deps
-        uses: ./.github/workflows/ci.yml
+      - name: checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 2
+
+      - name: setup caching
+        uses: actions/cache@v2
+        with:
+          path: ${{ env.PNPM_CACHE_FOLDER }}
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-
+
+      - name: setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7.x.x
+
+      - name: setup node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: "pnpm"
+
+      - name: setup pnpm config
+        run: pnpm config set store-dir $PNPM_CACHE_FOLDER
+
+      - name: install dependencies
+        run: pnpm i
+
+      - name: build
+        run: pnpm build
 
       - name: install and build
         uses: withastro/action@v0

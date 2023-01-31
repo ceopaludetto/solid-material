@@ -45,13 +45,7 @@ const sidebar = [
                   <span class="text-title-small capitalize text-on-surface-variant">{section}</span>
                 </div>
                 {items.map((item) => (
-                  <NavigationDrawerItem
-                    class="capitalize"
-                    active={item.url === frontmatter.url}
-                    client:load
-                    as="a"
-                    href={item.url}
-                  >
+                  <NavigationDrawerItem active={item.url === frontmatter.url} client:load as="a" href={item.url}>
                     {item.frontmatter.title}
                   </NavigationDrawerItem>
                 ))}
