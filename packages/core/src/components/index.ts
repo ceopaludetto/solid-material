@@ -11,3 +11,4 @@ export * from "./navigation-item";
 export * from "./navigation-rail";
 export * from "./switch";
 export * from "./text-field";
+export * from "./top-bar";
