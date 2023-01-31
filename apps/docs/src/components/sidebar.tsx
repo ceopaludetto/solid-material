@@ -4,7 +4,7 @@ import type { JSX } from "solid-js";
 import { IconButton, NavigationDrawer, NavigationDrawerItem } from "@solidjs-material/core";
 import { AiOutlineMenu } from "solid-icons/ai";
 import { BsCardText, BsToggleOff } from "solid-icons/bs";
-import { For } from "solid-js";
+import { createSignal, For } from "solid-js";
 
 import { createClickOutside } from "~/utils/click-outside";
 
@@ -22,20 +22,26 @@ const icons: Record<Section, JSX.Element> = {
 };
 
 export function Sidebar(props: SidebarProps) {
-  const ref = createClickOutside<HTMLDivElement>((sidebar) => {
-    if (!sidebar) return;
+  const [ref, setRef] = createSignal<HTMLDivElement>();
 
-    if (sidebar.classList.contains("max-lg:-translate-x-full")) {
-      sidebar.classList.remove("max-lg:-translate-x-full");
-      return;
-    }
+  createClickOutside<HTMLDivElement>({
+    ref,
+    isDisabled: () => ref()?.classList.contains("max-lg:-translate-x-full"),
+    callback: (sidebar) => {
+      if (!sidebar) return;
 
-    sidebar.classList.add("max-lg:-translate-x-full");
+      if (sidebar.classList.contains("max-lg:-translate-x-full")) {
+        sidebar.classList.remove("max-lg:-translate-x-full");
+        return;
+      }
+
+      sidebar.classList.add("max-lg:-translate-x-full");
+    },
   });
 
   return (
     <aside
-      ref={ref}
+      ref={setRef}
       id="sidebar"
       class="top-0 z-50 h-full overflow-hidden rounded-md bg-surface transition-transform surface max-lg:fixed max-lg:w-4/5 max-lg:max-w-[360px] max-lg:-translate-x-full max-lg:surface-1 lg:sticky lg:top-[64px] lg:h-[calc(100vh-72px)]"
     >
