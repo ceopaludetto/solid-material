@@ -3,11 +3,11 @@ import "@fontsource/poppins/300.css";
 import "@fontsource/poppins/400.css";
 import "@fontsource/poppins/500.css";
 
-import { NavigationDrawer, NavigationDrawerItem } from "@solidjs-material/core";
-import { BsToggleOff, BsCardText } from "solid-icons/bs";
+import type { SidebarEntry } from "~/components/sidebar";
 
 import Footer from "~/components/footer.astro";
-import Header from "~/components/header.astro";
+import { Header } from "~/components/header";
+import { Sidebar } from "~/components/sidebar";
 import TOC from "~/components/toc.astro";
 
 export interface Props {
@@ -16,10 +16,10 @@ export interface Props {
 
 const { frontmatter, headings } = Astro.props;
 
-const sidebar = [
+const entries = [
   ["Guide", await Astro.glob("../pages/guide/*.mdx")],
   ["Components", await Astro.glob("../pages/components/*.mdx")],
-] as const;
+] satisfies SidebarEntry[];
 ---
 
 <!DOCTYPE html>
@@ -32,28 +32,9 @@ const sidebar = [
     <title>{frontmatter.title} - Solid Material</title>
   </head>
   <body class="min-h-screen">
-    <Header />
-    <main class="grid grid-rows-[1fr] items-start max-lg:grid-cols-[1fr] lg:grid-cols-[300px,1fr,250px]">
-      <aside class="sticky top-[72px] h-[calc(100vh-72px)] max-h-full overflow-y-auto max-lg:hidden">
-        <NavigationDrawer client:load>
-          {
-            sidebar.map(([section, items]) => (
-              <>
-                <div class="mx-3 flex items-center gap-x-3 py-2">
-                  {section === "Guide" && <BsCardText />}
-                  {section === "Components" && <BsToggleOff />}
-                  <span class="text-title-small capitalize text-on-surface-variant">{section}</span>
-                </div>
-                {items.map((item) => (
-                  <NavigationDrawerItem active={item.url === frontmatter.url} client:load as="a" href={item.url}>
-                    {item.frontmatter.title}
-                  </NavigationDrawerItem>
-                ))}
-              </>
-            ))
-          }
-        </NavigationDrawer>
-      </aside>
+    <Header client:load />
+    <main class="grid grid-rows-[1fr] items-start max-lg:grid-cols-[1fr] max-lg:pt-4 lg:grid-cols-[360px,1fr,250px]">
+      <Sidebar client:load currentURL={frontmatter.url} entries={entries} />
       <aside id="toc" class="mb-5 px-4 lg:hidden">
         <TOC headings={headings} />
       </aside>
@@ -63,7 +44,7 @@ const sidebar = [
         <slot />
         <Footer tight />
       </div>
-      <aside id="toc" class="sticky top-[72px] max-h-full overflow-y-auto px-4 max-lg:hidden">
+      <aside id="toc" class="sticky top-[64px] max-h-full overflow-y-auto px-4 max-lg:hidden">
         <TOC headings={headings} />
       </aside>
     </main>
@@ -87,3 +68,21 @@ const sidebar = [
     scroll-behavior: smooth;
   }
 </style>
+
+<script>
+  const sidebar = document.querySelector("#sidebar");
+  const toggle = document.querySelectorAll(".sidebar-toggle");
+
+  function openSidebar() {
+    if (!sidebar) return;
+
+    if (sidebar.classList.contains("max-lg:-translate-x-full")) {
+      sidebar.classList.remove("max-lg:-translate-x-full");
+      return;
+    }
+
+    sidebar.classList.add("max-lg:-translate-x-full");
+  }
+
+  toggle.forEach((toggle) => toggle.addEventListener("click", openSidebar));
+</script>
