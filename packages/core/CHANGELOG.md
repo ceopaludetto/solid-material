@@ -1,5 +1,11 @@
 # @solidjs-material/core
 
+## 0.0.9
+
+### Patch Changes
+
+- d544306: Add topbar component
+
 ## 0.0.8
 
 ### Patch Changes
