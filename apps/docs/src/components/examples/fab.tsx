@@ -4,9 +4,9 @@ import { AiOutlinePlus } from "solid-icons/ai";
 export function BasicExample() {
   return (
     <>
-      <FAB icon={<AiOutlinePlus />} />
-      <FAB icon={<AiOutlinePlus />} variant="secondary" />
-      <FAB icon={<AiOutlinePlus />} variant="tertiary" />
+      <FAB icon={<AiOutlinePlus />} aria-label="Add" />
+      <FAB icon={<AiOutlinePlus />} aria-label="Add" variant="secondary" />
+      <FAB icon={<AiOutlinePlus />} aria-label="Add" variant="tertiary" />
     </>
   );
 }
@@ -14,9 +14,9 @@ export function BasicExample() {
 export function SizeExample() {
   return (
     <>
-      <FAB icon={<AiOutlinePlus />} size="small" />
-      <FAB icon={<AiOutlinePlus />} size="medium" />
-      <FAB icon={<AiOutlinePlus />} size="large" />
+      <FAB icon={<AiOutlinePlus />} aria-label="Add" size="small" />
+      <FAB icon={<AiOutlinePlus />} aria-label="Add" size="medium" />
+      <FAB icon={<AiOutlinePlus />} aria-label="Add" size="large" />
     </>
   );
 }

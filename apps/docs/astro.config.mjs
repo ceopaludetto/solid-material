@@ -7,7 +7,9 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
   site: "https://solid-material.dev",
   markdown: {
-    shikiConfig: { theme: "css-variables" },
+    shikiConfig: {
+      theme: "css-variables",
+    },
   },
   integrations: [solid(), tailwind(), mdx()],
 });

@@ -8,23 +8,26 @@ const cards = [
     title: "Made with SolidJS",
     content: "Simple and performant reactivity for building user interfaces.",
     image: "/solid.svg",
+    alt: "SolidJS",
   },
   {
     title: "Following Material You",
     content: "Design and build beautiful, usable products with Material 3.",
     image: "/material.svg",
+    alt: "Material Design",
   },
   {
     title: "TailwindCSS Powered",
     content: "Rapidly build modern websites without ever leaving your HTML.",
     image: "/tailwindcss.svg",
+    alt: "Tailwindcss",
   },
 ];
 ---
 
 <Layout title="Solid Material" description="High quality solid-js components at ease.">
   <main>
-    <section class="container mx-auto flex flex-col items-center gap-6 px-4 py-12 text-center">
+    <section class="container mx-auto flex flex-col items-center gap-6 px-4 pt-20 pb-10 text-center">
       <h1 class="text-display-medium font-bold">
         <span class="text-primary">SolidMaterial</span><br />
         High quality components at ease.
@@ -50,7 +53,7 @@ const cards = [
           <Card class="flex flex-col items-start p-4">
             {card.image && (
               <div class="rounded-sm bg-surface p-2">
-                <img src={card.image} class="aspect-square h-12 object-contain" />
+                <img src={card.image} class="aspect-square h-12 object-contain" alt={card.alt} />
               </div>
             )}
             <p class="my-2 text-title-medium font-bold">{card.title}</p>

@@ -25,6 +25,6 @@
     "@solidjs-material/configuration": "workspace:^0.0.4",
     "@solidjs-material/tailwind": "workspace:^0.0.5",
     "@tailwindcss/typography": "^0.5.9",
-    "astro": "^2.0.2"
+    "astro": "^2.0.4"
   }
 }
