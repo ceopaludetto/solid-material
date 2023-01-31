@@ -40,7 +40,7 @@
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
-    "@solidjs-material/configuration": "workspace:^0.0.4",
+    "@solidjs-material/configuration": "workspace:^0.0.5",
     "eslint": "^8.32.0",
     "tsup": "^6.5.0",
     "type-fest": "^3.5.3"

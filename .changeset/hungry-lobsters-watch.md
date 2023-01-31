@@ -1,6 +1,0 @@
----
-"@solidjs-material/configuration": patch
-"@solidjs-material/core": patch
----
-
-Fix some style inconsistances
