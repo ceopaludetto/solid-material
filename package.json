@@ -12,7 +12,7 @@
   "main": "index.js",
   "scripts": {
     "build": "turbo build",
-    "ci:publish": "turbo run lint build && git status && changeset publish",
+    "ci:publish": "turbo run lint build --filter=\"./packages/*\" && git status && changeset publish",
     "ci:version": "changeset version && pnpm install --no-frozen-lockfile && git add .",
     "dev": "turbo dev --parallel",
     "lint": "turbo lint"

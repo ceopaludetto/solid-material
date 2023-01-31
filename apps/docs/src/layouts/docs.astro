@@ -34,7 +34,7 @@ const sidebar = [
   <body class="min-h-screen">
     <Header />
     <main class="grid grid-rows-[1fr] items-start max-lg:grid-cols-[1fr] lg:grid-cols-[300px,1fr,250px]">
-      <aside class="sticky top-20 h-[calc(100vh-72px)] max-h-full overflow-y-auto max-lg:hidden">
+      <aside class="sticky top-[72px] h-[calc(100vh-72px)] max-h-full overflow-y-auto max-lg:hidden">
         <NavigationDrawer client:load>
           {
             sidebar.map(([section, items]) => (
@@ -63,7 +63,7 @@ const sidebar = [
         <slot />
         <Footer tight />
       </div>
-      <aside id="toc" class="sticky top-20 max-h-full overflow-y-auto px-4 max-lg:hidden">
+      <aside id="toc" class="sticky top-[72px] max-h-full overflow-y-auto px-4 max-lg:hidden">
         <TOC headings={headings} />
       </aside>
     </main>
