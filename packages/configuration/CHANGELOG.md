@@ -1,5 +1,12 @@
 # @solidjs-material/configuration
 
+## 0.0.5
+
+### Patch Changes
+
+- f7f74e3: Add new docs
+- 5a012bf: Fix some style inconsistances
+
 ## 0.0.4
 
 ### Patch Changes

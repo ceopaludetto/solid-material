@@ -1,5 +1,14 @@
 # @solidjs-material/core
 
+## 0.0.8
+
+### Patch Changes
+
+- f7f74e3: Add new docs
+- 62ac49f: Fix dialog styles
+- 62ac49f: Improve ripple usage by leveraging ref logic inside primitive
+- 5a012bf: Fix some style inconsistances
+
 ## 0.0.7
 
 ### Patch Changes
