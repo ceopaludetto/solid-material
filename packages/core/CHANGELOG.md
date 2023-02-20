@@ -1,5 +1,11 @@
 # @solidjs-material/core
 
+## 0.0.11
+
+### Patch Changes
+
+- 986c180: Fix lint script
+
 ## 0.0.10
 
 ### Patch Changes

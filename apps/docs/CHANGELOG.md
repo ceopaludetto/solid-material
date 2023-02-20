@@ -1,5 +1,12 @@
 # @solidjs-material/docs
 
+## 0.0.5
+
+### Patch Changes
+
+- Updated dependencies [986c180]
+  - @solidjs-material/core@0.0.11
+
 ## 0.0.4
 
 ### Patch Changes
