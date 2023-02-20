@@ -16,6 +16,7 @@
     "ci:version": "changeset version && pnpm install --no-frozen-lockfile && git add .",
     "dev": "turbo dev --parallel",
     "lint": "turbo lint",
+    "lint:fix": "turbo lint:fix",
     "test": "turbo test"
   },
   "devDependencies": {

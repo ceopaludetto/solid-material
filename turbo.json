@@ -9,6 +9,7 @@
       "outputs": ["dist/**"]
     },
     "test": {},
-    "lint": {}
+    "lint": {},
+    "lint:fix": {}
   }
 }
