@@ -1,5 +1,11 @@
 # @solidjs-material/tailwind
 
+## 0.0.7
+
+### Patch Changes
+
+- 986c180: Fix lint script
+
 ## 0.0.6
 
 ### Patch Changes

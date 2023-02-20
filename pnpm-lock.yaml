@@ -25,8 +25,8 @@ importers:
       '@astrojs/tailwind': ^3.0.1
       '@fontsource/poppins': ^4.5.10
       '@solidjs-material/configuration': workspace:^0.0.6
-      '@solidjs-material/core': workspace:^0.0.10
-      '@solidjs-material/tailwind': workspace:^0.0.6
+      '@solidjs-material/core': workspace:^0.0.11
+      '@solidjs-material/tailwind': workspace:^0.0.7
       '@tailwindcss/typography': ^0.5.9
       astro: ^2.0.14
       solid-icons: ^1.0.4
