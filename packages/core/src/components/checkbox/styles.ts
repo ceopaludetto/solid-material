@@ -3,7 +3,7 @@ import { cva } from "class-variance-authority";
 export const root = cva(
   [
     "flex items-center gap-4",
-    "ui-hover:group-hover-state-layer ui-focus:group-focus-state-layer ui-active:group-press-state-layer",
+    "focus:group-focus-state-layer ui-not-disabled:hover:group-hover-state-layer ui-not-disabled:active:group-press-state-layer",
   ],
   {
     variants: {

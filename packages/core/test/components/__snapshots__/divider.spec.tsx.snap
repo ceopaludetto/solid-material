@@ -1,0 +1,5 @@
+// Vitest Snapshot v1
+
+exports[`Divider > should render 1`] = `"<hr class=\\"border-none bg-outline ui-horizontal:h-px ui-horizontal:w-full ui-vertical:h-full ui-vertical:w-px\\" data-orientation=\\"horizontal\\">"`;
+
+exports[`Divider > should render in vertical orientation 1`] = `"<hr class=\\"border-none bg-outline ui-horizontal:h-px ui-horizontal:w-full ui-vertical:h-full ui-vertical:w-px\\" aria-orientation=\\"vertical\\" data-orientation=\\"vertical\\">"`;

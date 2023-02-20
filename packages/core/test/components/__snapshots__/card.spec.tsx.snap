@@ -1,0 +1,7 @@
+// Vitest Snapshot v1
+
+exports[`Card > should render 1`] = `"<div class=\\"rounded-md bg-surface-variant\\">Test</div>"`;
+
+exports[`Card > should render as custom element 1`] = `"<button class=\\"rounded-md bg-surface-variant\\">Test</button>"`;
+
+exports[`Card > should render with outlined variant 1`] = `"<div class=\\"rounded-md border border-outline bg-surface\\">Test</div>"`;

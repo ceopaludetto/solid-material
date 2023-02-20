@@ -3,7 +3,7 @@ import { cva } from "class-variance-authority";
 export const root = cva(
   [
     "inline-flex items-center justify-center gap-x-2 text-label-large outline-none state-layer ripple",
-    "ui-hover:hover-state-layer ui-focus:focus-state-layer ui-focus-visible:hover-state-layer ui-active:press-state-layer",
+    "focus:focus-state-layer focus-visible:hover-state-layer ui-not-disabled:hover:hover-state-layer ui-not-disabled:active:press-state-layer",
   ],
   {
     variants: {
