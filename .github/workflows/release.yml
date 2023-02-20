@@ -1,4 +1,4 @@
-name: Release
+name: Release on NPM
 
 on:
   push:
@@ -12,12 +12,12 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     steps:
-      - name: checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      - name: setup caching
+      - name: Setup Caching
         uses: actions/cache@v2
         with:
           path: ${{ env.PNPM_CACHE_FOLDER }}
@@ -25,18 +25,18 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-
 
-      - name: setup pnpm
+      - name: Setup PNPM
         uses: pnpm/action-setup@v2
         with:
           version: 7.x.x
 
-      - name: setup node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 16.x
           cache: "pnpm"
 
-      - name: setup .npmrc
+      - name: Setup .npmrc
         run: |
           cat << EOF > "$HOME/.npmrc"
             //registry.npmjs.org/:_authToken=$NPM_TOKEN
@@ -44,13 +44,13 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
-      - name: setup pnpm config
+      - name: Setup PNPM Config
         run: pnpm config set store-dir $PNPM_CACHE_FOLDER
 
-      - name: install dependencies
+      - name: Install Dependencies
         run: pnpm i
 
-      - name: create version PR & prepare publish
+      - name: Create Version PR & Prepare Publish
         uses: changesets/action@v1
         with:
           version: pnpm ci:version

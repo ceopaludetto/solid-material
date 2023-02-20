@@ -1,8 +1,11 @@
-name: Deploy
+name: Deploy on GH Pages
 
 on:
   push:
     branches: [main]
+    paths:
+      - "**/CHANGELOG.md"
+
   workflow_dispatch:
 
 permissions:
@@ -18,12 +21,12 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     steps:
-      - name: checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v3
         with:
           fetch-depth: 2
 
-      - name: setup caching
+      - name: Setup Caching
         uses: actions/cache@v2
         with:
           path: ${{ env.PNPM_CACHE_FOLDER }}
@@ -31,30 +34,32 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-pnpm-
 
-      - name: setup pnpm
+      - name: Setup PNPM
         uses: pnpm/action-setup@v2
         with:
           version: 7.x.x
 
-      - name: setup node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: 16.x
           cache: "pnpm"
 
-      - name: setup pnpm config
+      - name: Setup PNPM Config
         run: pnpm config set store-dir $PNPM_CACHE_FOLDER
 
-      - name: install dependencies
+      - name: Install Dependencies
         run: pnpm i
 
-      - name: build
+      - name: Build
         run: pnpm build
 
-      - name: install and build
+      - name: Install and Build
         uses: withastro/action@v0
         with:
           path: ./apps/docs
+          package-manager: pnpm
+          resolve-dep-from-path: false
 
   deploy:
     name: Deploy
