@@ -1,6 +1,6 @@
 {
   "name": "@solidjs-material/tailwind",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Solid Material tailwind preset",
   "keywords": [
     "material you",
@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
-    "@solidjs-material/configuration": "workspace:^0.0.6",
+    "@solidjs-material/configuration": "workspace:^0.0.7",
     "eslint": "^8.34.0",
     "tsup": "^6.6.3",
     "type-fest": "^3.6.0"

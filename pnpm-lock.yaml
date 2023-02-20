@@ -24,9 +24,9 @@ importers:
       '@astrojs/solid-js': ^2.0.2
       '@astrojs/tailwind': ^3.0.1
       '@fontsource/poppins': ^4.5.10
-      '@solidjs-material/configuration': workspace:^0.0.6
-      '@solidjs-material/core': workspace:^0.0.11
-      '@solidjs-material/tailwind': workspace:^0.0.7
+      '@solidjs-material/configuration': workspace:^0.0.7
+      '@solidjs-material/core': workspace:^0.0.12
+      '@solidjs-material/tailwind': workspace:^0.0.8
       '@tailwindcss/typography': ^0.5.9
       astro: ^2.0.14
       solid-icons: ^1.0.4
@@ -78,7 +78,7 @@ importers:
       '@kobalte/core': ^0.6.1
       '@kobalte/utils': ^0.5.1
       '@rushstack/eslint-patch': ^1.2.0
-      '@solidjs-material/configuration': workspace:^0.0.6
+      '@solidjs-material/configuration': workspace:^0.0.7
       '@solidjs/testing-library': ^0.6.1
       '@types/testing-library__jest-dom': github:zoontek/types-testing-library-vitest-dom
       babel-preset-solid: ^1.6.10
@@ -117,7 +117,7 @@ importers:
       '@kobalte/tailwindcss': ^0.4.2
       '@material/material-color-utilities': ^0.2.0
       '@rushstack/eslint-patch': ^1.2.0
-      '@solidjs-material/configuration': workspace:^0.0.6
+      '@solidjs-material/configuration': workspace:^0.0.7
       eslint: ^8.34.0
       kebab-case: ^1.0.2
       tailwindcss: ^3.2.7
