@@ -1,5 +1,11 @@
 # @solidjs-material/configuration
 
+## 0.0.7
+
+### Patch Changes
+
+- 423f693: Fix CI
+
 ## 0.0.6
 
 ### Patch Changes

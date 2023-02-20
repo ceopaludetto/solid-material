@@ -1,6 +1,6 @@
 {
   "name": "@solidjs-material/core",
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "Solid Material core components",
   "keywords": [
     "material you",
@@ -45,7 +45,7 @@
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
-    "@solidjs-material/configuration": "workspace:^0.0.6",
+    "@solidjs-material/configuration": "workspace:^0.0.7",
     "@solidjs/testing-library": "^0.6.1",
     "@types/testing-library__jest-dom": "github:zoontek/types-testing-library-vitest-dom",
     "babel-preset-solid": "^1.6.10",

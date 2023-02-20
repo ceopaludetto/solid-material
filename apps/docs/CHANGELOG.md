@@ -1,5 +1,13 @@
 # @solidjs-material/docs
 
+## 0.0.6
+
+### Patch Changes
+
+- 423f693: Fix CI
+- Updated dependencies [423f693]
+  - @solidjs-material/core@0.0.12
+
 ## 0.0.5
 
 ### Patch Changes
