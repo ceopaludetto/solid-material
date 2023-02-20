@@ -2,7 +2,6 @@ import type { Config } from "tailwindcss";
 
 import kobateTailwind from "@kobalte/tailwindcss";
 import plugin from "tailwindcss/plugin";
-import { addDefault } from "utils";
 
 import {
   createCSSVariablesFromScheme,
@@ -13,6 +12,7 @@ import {
   createTransitionTokens,
   createTypographyTokens,
 } from "./tokens";
+import { addDefault } from "~/utils";
 
 export type DesignSystemOptions = {
   baseColor: string;
@@ -53,7 +53,7 @@ export function designSystem({ baseColor, addSelectionStyles = true }: DesignSys
     },
     plugins: [
       kobateTailwind,
-      plugin(({ addBase, addUtilities, addVariant, matchUtilities, matchVariant, theme, e }) => {
+      plugin(({ addBase, addUtilities, addVariant, matchUtilities, theme }) => {
         addBase({
           ":root": createCSSVariablesFromScheme(schemes.light),
           "@media(prefers-color-scheme: dark)": {
@@ -162,46 +162,21 @@ export function designSystem({ baseColor, addSelectionStyles = true }: DesignSys
           { type: ["absolute-size", "relative-size", "length", "percentage"], values: theme("spacing") },
         );
 
-        addVariant("ui-horizontal", "&[data-orientation='horizontal']");
-        addVariant("ui-not-horizontal", "&:not([data-orientation='horizontal'])");
-
-        addVariant("ui-vertical", "&[data-orientation='vertical']");
-        addVariant("ui-not-vertical", "&:not([data-orientation='vertical'])");
-
-        addVariant("ui-in-route", "&.active");
-        addVariant("ui-not-in-route", "&:not(.active)");
-
         const variants = [
-          "focus",
-          "hover",
-          "disabled",
-          "invalid",
-          [
-            ["ui-in-route", ".active"],
-            ["ui-not-in-route", ":not(.active)"],
-          ],
-        ]
-          .map((variant) =>
-            Array.isArray(variant)
-              ? variant
-              : [
-                  [`ui-${variant}`, `[data-${variant}]`],
-                  [`ui-not-${variant}`, `:not([data-${variant}])`],
-                ],
-          )
-          .flat();
+          ["in-route", ".active"],
+          ["disabled", "[data-disabled]"],
+        ];
 
-        matchVariant(
-          "group",
-          (value, { modifier }) =>
-            modifier ? `:merge(.group\\/${e(modifier)})${value} &` : `:merge(.group)${value} &`,
-          { values: Object.fromEntries(variants) },
-        );
+        variants.forEach(([name, variant]) => {
+          addVariant(`ui-${name}`, `&${variant}`);
+          addVariant(`ui-not-${name}`, `&:not(${variant})`);
 
-        // variants.forEach((variant) => {
-        //   addVariant(`group-ui-not-${variant}`, `:merge(.group):not([data-${variant}]) &`);
-        //   addVariant(`group-ui-${variant}`, `:merge(.group)[data-${variant}] &`);
-        // });
+          addVariant(`ui-group-${name}`, `:merge(.group)${variant} &`);
+          addVariant(`ui-group-not-${name}`, `:merge(.group):not(${variant}) &`);
+
+          addVariant(`ui-peer-${name}`, `:merge(.peer)${variant} ~ &`);
+          addVariant(`ui-peer-not-${name}`, `:merge(.peer):not(${variant}) ~ &`);
+        });
       }),
     ],
   };

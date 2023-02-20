@@ -3,7 +3,7 @@ import { cva } from "class-variance-authority";
 export const root = cva(
   [
     "inline-flex h-10 items-center justify-center gap-x-2 rounded-full text-label-large outline-none transition state-layer ripple",
-    "ui-hover:hover-state-layer ui-focus:focus-state-layer ui-focus-visible:hover-state-layer ui-active:press-state-layer",
+    "focus:focus-state-layer focus-visible:hover-state-layer ui-not-disabled:hover:hover-state-layer ui-not-disabled:active:press-state-layer",
   ],
   {
     variants: {
@@ -13,7 +13,7 @@ export const root = cva(
           "bg-secondary-container text-on-secondary-container ui-disabled:bg-on-surface/12 ui-disabled:text-on-surface/38",
         ],
         outlined: [
-          "border border-outline bg-surface text-primary ui-disabled:border-on-surface/12 ui-disabled:text-on-surface/38 ui-focus:border-primary",
+          "border border-outline bg-surface text-primary focus:border-primary ui-disabled:border-on-surface/12 ui-disabled:text-on-surface/38",
         ],
         text: ["bg-transparent text-primary ui-disabled:text-on-surface/38"],
       },

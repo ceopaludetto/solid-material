@@ -1,0 +1,35 @@
+---
+title: Tabs
+layout: ~/layouts/docs.astro
+---
+
+import Playground from "~/components/playground.astro";
+import { BasicExample, WithoutIconsExample, SecondaryExample } from "~/components/examples/tabs";
+
+# {frontmatter.title}
+
+Tabs make it easy to explore and switch between different views.
+
+## Basic usage
+
+The `Tabs` comes with two variants: primary and secondary.
+
+### Primary
+
+With icons:
+
+<Playground>
+  <BasicExample client:load />
+</Playground>
+
+Without icons:
+
+<Playground>
+  <WithoutIconsExample client:load />
+</Playground>
+
+### Secondary
+
+<Playground>
+  <SecondaryExample client:load />
+</Playground>

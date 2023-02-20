@@ -1,5 +1,16 @@
 # @solidjs-material/docs
 
+## 0.0.4
+
+### Patch Changes
+
+- Add tabs component
+  Add tests
+  Bump kobalte version
+  Fix components interactions
+- Updated dependencies
+  - @solidjs-material/core@0.0.10
+
 ## 0.0.3
 
 ### Patch Changes

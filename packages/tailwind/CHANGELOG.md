@@ -1,5 +1,14 @@
 # @solidjs-material/tailwind
 
+## 0.0.6
+
+### Patch Changes
+
+- Add tabs component
+  Add tests
+  Bump kobalte version
+  Fix components interactions
+
 ## 0.0.5
 
 ### Patch Changes

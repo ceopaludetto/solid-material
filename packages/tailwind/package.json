@@ -1,6 +1,6 @@
 {
   "name": "@solidjs-material/tailwind",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Solid Material tailwind preset",
   "keywords": [
     "material you",
@@ -30,20 +30,23 @@
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
-    "lint": "eslint \"src/**/*.ts\" --fix"
+    "lint": "eslint \"src/**/*.ts\" --xfix"
   },
   "dependencies": {
-    "@kobalte/tailwindcss": "^0.3.0",
+    "@kobalte/tailwindcss": "^0.4.2",
     "@material/material-color-utilities": "^0.2.0",
     "kebab-case": "^1.0.2",
-    "tailwindcss": "^3.2.4"
+    "tailwindcss": "^3.2.7"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
-    "@solidjs-material/configuration": "workspace:^0.0.5",
-    "eslint": "^8.32.0",
-    "tsup": "^6.5.0",
-    "type-fest": "^3.5.3"
+    "@solidjs-material/configuration": "workspace:^0.0.6",
+    "eslint": "^8.34.0",
+    "tsup": "^6.6.3",
+    "type-fest": "^3.6.0"
+  },
+  "peerDependencies": {
+    "tailwindcss": "^3.2.0"
   },
   "publishConfig": {
     "access": "public"

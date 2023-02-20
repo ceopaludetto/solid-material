@@ -3,8 +3,8 @@ import { cva } from "class-variance-authority";
 // Disable this rule until https://github.com/francoismassart/eslint-plugin-tailwindcss/issues/183
 // eslint-disable-next-line tailwindcss/no-custom-classname
 export const root = cva([
-  "group/input flex w-full flex-col gap-y-1",
-  "ui-hover:ui-invalid:text-on-error-container ui-not-hover:ui-invalid:text-error ui-focus:ui-invalid:text-error ui-focus:ui-not-invalid:text-primary ui-not-focus:ui-not-invalid:text-on-surface-variant",
+  "group flex w-full flex-col gap-y-1",
+  "focus-within:ui-invalid:text-error ui-not-invalid:text-on-surface-variant focus-within:ui-not-invalid:text-primary ui-not-disabled:ui-invalid:text-error ui-not-disabled:hover:ui-invalid:text-on-error-container",
 ]);
 
 export const wrapper = cva(["relative inline-flex w-full items-stretch overflow-hidden"], {
@@ -12,9 +12,9 @@ export const wrapper = cva(["relative inline-flex w-full items-stretch overflow-
     variant: {
       filled: [
         "rounded-xs bg-surface-variant state-layer",
-        "after:absolute after:bottom-0 after:left-1/2 after:h-0.5 after:w-0 after:bg-primary after:transition-[width,left] group-ui-focus/input:after:left-0 group-ui-focus/input:after:w-full",
-        "group-ui-focus/input:!reset-state-layer group-ui-hover/input:hover-state-layer",
-        "group-ui-disabled/input:bg-on-surface/4 group-ui-invalid/input:after:bg-error",
+        "after:absolute after:bottom-0 after:left-1/2 after:h-0.5 after:w-0 after:bg-primary after:transition-[width,left] group-focus-within:after:left-0 group-focus-within:after:w-full",
+        "group-focus-within:!reset-state-layer ui-group-not-disabled:group-hover:hover-state-layer",
+        "ui-group-invalid:after:bg-error ui-group-disabled:bg-on-surface/4",
       ],
     },
   },
@@ -23,7 +23,7 @@ export const wrapper = cva(["relative inline-flex w-full items-stretch overflow-
 export const label = cva(
   [
     "pointer-events-none absolute left-4 select-none text-body-large text-inherit transition-[transform,top,font-size,letter-spacing,line-height,color]",
-    "group-ui-focus/input:top-0 group-ui-focus/input:translate-y-1/2 group-ui-focus/input:text-body-small group-ui-not-focus/input:top-1/2 group-ui-not-focus/input:-translate-y-1/2",
+    "top-1/2 -translate-y-1/2 group-focus-within:top-0 group-focus-within:translate-y-1/2 group-focus-within:text-body-small",
     "ui-disabled:text-on-surface/38",
   ],
   {

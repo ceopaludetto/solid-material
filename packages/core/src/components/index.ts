@@ -10,5 +10,6 @@ export * from "./navigation-drawer-item";
 export * from "./navigation-item";
 export * from "./navigation-rail";
 export * from "./switch";
+export * from "./tabs";
 export * from "./text-field";
 export * from "./top-bar";

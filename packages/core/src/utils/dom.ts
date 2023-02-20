@@ -1,4 +1,4 @@
-function isPointerEvent(event: any): event is PointerEvent {
+export function isPointerEvent(event: any): event is PointerEvent {
   return "pointerType" in event;
 }
 

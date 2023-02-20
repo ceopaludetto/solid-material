@@ -69,10 +69,10 @@ export function App() {
 - [ ] Slider
 - [ ] Snackbar
 - [x] Switch
-- [ ] Tabs
+- [x] Tabs
 - [x] Text Field
 - [ ] Time Fields
-- [ ] Top App Bar
+- [x] Top App Bar
 
 ### Library related
 
