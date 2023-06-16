@@ -2,7 +2,6 @@ import { cva } from "class-variance-authority";
 
 export const root = cva(["w-full"]);
 
-// eslint-disable-next-line tailwindcss/no-custom-classname
 export const list = cva(["relative flex w-full items-center border-b border-surface-variant"], {
   variants: {
     variant: {

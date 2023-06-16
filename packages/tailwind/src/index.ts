@@ -19,10 +19,11 @@ export type DesignSystemOptions = {
   addSelectionStyles?: boolean;
 };
 
-export function designSystem({ baseColor, addSelectionStyles = true }: DesignSystemOptions): Partial<Config> {
+export function designSystem({ baseColor, addSelectionStyles = true }: DesignSystemOptions): Config {
   const schemes = createPaletteFromColor(baseColor);
 
   return {
+    content: [],
     theme: {
       surface: {
         0: 0,
@@ -77,22 +78,6 @@ export function designSystem({ baseColor, addSelectionStyles = true }: DesignSys
         });
 
         addUtilities({
-          ".surface": {
-            "&::before": {
-              content: "''",
-              display: "block",
-              position: "absolute",
-              left: "0",
-              top: "0",
-              height: "100%",
-              width: "100%",
-              pointerEvents: "none",
-              background: `rgb(var(--primary) / var(--tw-surface-opacity, 0))`,
-              transitionProperty: "background-color",
-              transitionDuration: theme("transitionDuration.short3"),
-              transitionTimingFunction: theme("transitionTimingFunction.standard"),
-            },
-          },
           ".state-layer": {
             "&::before": {
               content: '""',
@@ -151,11 +136,6 @@ export function designSystem({ baseColor, addSelectionStyles = true }: DesignSys
             isolation: "isolate",
           },
         });
-
-        matchUtilities(
-          { surface: (value) => ({ "--tw-surface-opacity": value }) },
-          { type: "length", values: theme("surface") },
-        );
 
         matchUtilities(
           { "state-layer": (value) => ({ "--tw-state-layer-size": value }) },

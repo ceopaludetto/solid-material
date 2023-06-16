@@ -1,29 +1,28 @@
-import type { As, PolymorphicProps } from "@kobalte/utils";
+import type { PolymorphicProps } from "@kobalte/core";
 import type { VariantProps } from "class-variance-authority";
-import type { JSX } from "solid-js";
+import type { JSX, ValidComponent } from "solid-js";
 
+import { Polymorphic } from "@kobalte/core";
 import { splitProps } from "solid-js";
-import { Dynamic } from "solid-js/web";
 
 import { root } from "./styles";
 
-type CardOwnProps = VariantProps<typeof root> & {
-  class?: string;
-  children?: JSX.Element;
-};
+export type CardProps<T extends ValidComponent> = PolymorphicProps<T> &
+  VariantProps<typeof root> & {
+    class?: string;
+    children?: JSX.Element;
+  };
 
-export type CardProps<T extends As = "div"> = PolymorphicProps<T, CardOwnProps>;
-
-export function Card<T extends As = "div">(props: CardProps<T>) {
+export function Card<T extends ValidComponent = "div">(props: CardProps<T>) {
   const [local, rest] = splitProps(props, ["as", "children", "class", "variant"]);
 
   return (
-    <Dynamic
-      class={root({ class: local.class, variant: local.variant ?? "filled" })}
+    <Polymorphic
       component={local.as ?? "div"}
+      class={root({ class: local.class, variant: local.variant ?? "filled" })}
       {...rest}
     >
       {local.children}
-    </Dynamic>
+    </Polymorphic>
   );
 }

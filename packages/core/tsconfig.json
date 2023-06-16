@@ -9,5 +9,5 @@
       "~/*": ["./*"]
     }
   },
-  "include": ["src", "test", ".eslintrc.cjs", "tsup.config.ts", "vite.config.ts"]
+  "include": ["src", "test", ".eslintrc.cjs", "tsup.config.ts", "vite.config.ts", "turbowatch.ts"]
 }

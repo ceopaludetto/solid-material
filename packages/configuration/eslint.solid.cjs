@@ -8,7 +8,7 @@ module.exports = {
     tailwindcss: {
       // These are the default values but feel free to customize
       callees: ["classnames", "clsx", "ctl", "cva"],
-      config: resolve(__dirname, "..", "..", "apps", "docs", "tailwind.config.cjs"),
+      config: resolve(__dirname, "..", "..", "apps", "docs", "tailwind.config.ts"),
     },
   },
 };

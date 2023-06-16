@@ -7,5 +7,5 @@
       "~/*": ["./*"]
     }
   },
-  "include": ["src", ".eslintrc.cjs", "tsup.config.ts"]
+  "include": ["src", ".eslintrc.cjs", "tsup.config.ts", "turbowatch.ts"]
 }

@@ -1,4 +1,3 @@
-import type { PolymorphicProps, As } from "@kobalte/utils";
 import type { VariantProps } from "class-variance-authority";
 import type { JSX } from "solid-js";
 
@@ -9,7 +8,7 @@ import { icon, root } from "./styles";
 import { createRipples } from "~/primitives";
 import { mergeWithRefs } from "~/utils/refs";
 
-type ButtonOwnProps = KButton.ButtonRootOptions &
+export type ButtonProps = KButton.ButtonRootOptions &
   Omit<VariantProps<typeof root>, "hasEndIcon" | "hasStartIcon"> & {
     class?: string;
     children: JSX.Element;
@@ -17,10 +16,8 @@ type ButtonOwnProps = KButton.ButtonRootOptions &
     endIcon?: JSX.Element;
   };
 
-export type ButtonProps<T extends As = "button"> = PolymorphicProps<T, ButtonOwnProps>;
-
-export function Button<T extends As = "button">(props: ButtonProps<T>) {
-  const [trigger] = createRipples({ disabled: props.isDisabled });
+export function Button(props: ButtonProps) {
+  const [trigger] = createRipples({ disabled: props.disabled });
   const [local, rest] = splitProps(props, ["class", "children", "variant", "startIcon", "endIcon"]);
 
   return (
@@ -33,13 +30,9 @@ export function Button<T extends As = "button">(props: ButtonProps<T>) {
       })}
       {...mergeWithRefs(trigger, rest)}
     >
-      <Show when={!!local.startIcon}>
-        <span class={icon()}>{local.startIcon}</span>
-      </Show>
+      <Show when={local.startIcon}>{(startIcon) => <span class={icon()}>{startIcon()}</span>}</Show>
       {local.children}
-      <Show when={!!local.endIcon}>
-        <span class={icon()}>{local.endIcon}</span>
-      </Show>
+      <Show when={local.endIcon}>{(endIcon) => <span class={icon()}>{endIcon()}</span>}</Show>
     </KButton.Root>
   );
 }

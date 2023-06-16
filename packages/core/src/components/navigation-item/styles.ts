@@ -17,10 +17,10 @@ export const root = cva(
 
 export const content = cva([
   "text-label-medium",
-  "ui-group-not-in-route/link:text-on-surface-variant ui-group-in-route:text-on-surface",
+  "ui-group-in-route:text-on-surface ui-group-not-in-route/link:text-on-surface-variant",
 ]);
 
 export const icon = cva([
-  "inline-flex aspect-[7/4] h-8 items-center justify-center rounded-full text-icon-medium state-layer ripple reset-svg",
-  "ui-group-not-in-route:text-on-surface-variant ui-group-in-route:bg-secondary-container ui-group-in-route:text-on-secondary-container",
+  "inline-flex aspect-[7/4] h-8 items-center justify-center rounded-full text-icon-medium state-layer reset-svg ripple",
+  "ui-group-in-route:bg-secondary-container ui-group-in-route:text-on-secondary-container ui-group-not-in-route:text-on-surface-variant",
 ]);

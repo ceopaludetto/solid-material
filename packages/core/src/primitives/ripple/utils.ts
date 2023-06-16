@@ -51,7 +51,7 @@ export function cancelRippleAnimation<T extends HTMLElement>(element: T) {
     }ms`,
   };
 
-  applyClasses("opacity-0", element);
+  applyClasses("!opacity-0", element);
   applyStyles(styles, element);
 
   requestAnimationFrame(() => {

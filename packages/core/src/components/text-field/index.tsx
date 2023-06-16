@@ -1,4 +1,3 @@
-import type { As, PolymorphicProps } from "@kobalte/utils";
 import type { VariantProps } from "class-variance-authority";
 import type { JSX } from "solid-js";
 
@@ -8,7 +7,7 @@ import { createMemo, createSignal, onCleanup, onMount, Show, splitProps } from "
 import { adornment, description, field, input, label, root, wrapper } from "./styles";
 import { mergeWithRefs } from "~/utils/refs";
 
-type TextFieldOwnProps = KTextField.TextFieldRootOptions &
+export type TextFieldProps = KTextField.TextFieldRootOptions &
   VariantProps<typeof wrapper> & {
     label: string;
     startAdornment?: JSX.Element;
@@ -17,26 +16,14 @@ type TextFieldOwnProps = KTextField.TextFieldRootOptions &
     class?: string;
   };
 
-export type TextFieldProps<T extends As = "input"> = PolymorphicProps<T, TextFieldOwnProps>;
-
-export function TextField<T extends As = "input">(props: TextFieldProps<T>) {
+export function TextField(props: TextFieldProps) {
   const [ref, getRef] = createSignal<HTMLInputElement>();
   const [keepFloating, setKeepFloating] = createSignal(false);
 
   const [local, parent, rest] = splitProps(
     props,
     ["class", "label", "variant", "description", "startAdornment", "endAdornment"],
-    [
-      "value",
-      "defaultValue",
-      "onValueChange",
-      "id",
-      "name",
-      "validationState",
-      "isRequired",
-      "isDisabled",
-      "isReadOnly",
-    ],
+    ["value", "defaultValue", "onChange", "id", "name", "validationState", "required", "disabled", "readOnly"],
   );
 
   function shouldFloat(event: Event) {

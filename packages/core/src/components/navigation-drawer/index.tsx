@@ -1,20 +1,18 @@
-import type { As, PolymorphicProps } from "@kobalte/utils";
-import type { JSX } from "solid-js";
+import type { PolymorphicProps } from "@kobalte/core";
+import type { JSX, ValidComponent } from "solid-js";
 
 import { Show, splitProps } from "solid-js";
 import { Dynamic } from "solid-js/web";
 
 import { adornment, root } from "./styles";
 
-type NavigationDrawerOwnProps = {
+export type NavigationDrawerProps<T extends ValidComponent> = PolymorphicProps<T> & {
   class?: string;
   children?: JSX.Element;
   startAdornment?: JSX.Element;
 };
 
-export type NavigationDrawerProps<T extends As = "div"> = PolymorphicProps<T, NavigationDrawerOwnProps>;
-
-export function NavigationDrawer<T extends As = "div">(props: NavigationDrawerProps<T>) {
+export function NavigationDrawer<T extends ValidComponent = "div">(props: NavigationDrawerProps<T>) {
   const [local, rest] = splitProps(props, ["as", "class", "children", "startAdornment"]);
 
   return (

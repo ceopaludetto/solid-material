@@ -1,4 +1,3 @@
-import type { As, PolymorphicProps } from "@kobalte/utils";
 import type { VariantProps } from "class-variance-authority";
 import type { JSX } from "solid-js";
 
@@ -8,16 +7,14 @@ import { Show, splitProps } from "solid-js";
 import { icon, indicator, item, line, list, root } from "./styles";
 import { createRipples } from "~/primitives";
 
-type TabsOwnProps = KTabs.TabsRootOptions &
+export type TabsProps = KTabs.TabsRootOptions &
   VariantProps<typeof list> & {
     class?: string;
     items: JSX.Element;
     children: JSX.Element;
   };
 
-export type TabsProps<T extends As = "div"> = PolymorphicProps<T, TabsOwnProps>;
-
-function Root<T extends As = "div">(props: TabsProps<T>) {
+function Root(props: TabsProps) {
   const [local, rest] = splitProps(props, ["class", "items", "children", "variant", "hasIcons"]);
 
   return (
@@ -33,15 +30,13 @@ function Root<T extends As = "div">(props: TabsProps<T>) {
   );
 }
 
-type TabsItemOwnProps = KTabs.TabsTriggerOptions & {
-  class?: JSX.Element;
+export type TabsItemProps = KTabs.TabsTriggerOptions & {
+  class?: string;
   icon?: JSX.Element;
   children: JSX.Element;
 };
 
-export type TabsItemProps<T extends As = "button"> = PolymorphicProps<T, TabsItemOwnProps>;
-
-function Item<T extends As = "button">(props: TabsItemProps<T>) {
+function Item(props: TabsItemProps) {
   const [local, rest] = splitProps(props, ["children", "icon", "class", "value"]);
   const [ref] = createRipples({});
 

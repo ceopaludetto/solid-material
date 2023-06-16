@@ -1,12 +1,12 @@
 import { cva } from "class-variance-authority";
 
-export const root = cva(["flex h-16 items-center gap-x-3 bg-surface px-4 surface"], {
+export const root = cva(["surface flex h-16 items-center gap-x-3 bg-surface px-4"], {
   variants: {
     elevated: {
-      true: ["surface-2"],
+      true: ["bg-surface-container-lowest"],
     },
     disableOnDesktop: {
-      true: ["lg:!surface-0"],
+      true: ["lg:!bg-surface"],
     },
   },
 });

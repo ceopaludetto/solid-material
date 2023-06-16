@@ -1,7 +1,5 @@
 import { cva } from "class-variance-authority";
 
-// Disable this rule until https://github.com/francoismassart/eslint-plugin-tailwindcss/issues/183
-// eslint-disable-next-line tailwindcss/no-custom-classname
 export const root = cva([
   "group flex w-full flex-col gap-y-1",
   "focus-within:ui-invalid:text-error ui-not-invalid:text-on-surface-variant focus-within:ui-not-invalid:text-primary ui-not-disabled:ui-invalid:text-error ui-not-disabled:hover:ui-invalid:text-on-error-container",
@@ -38,7 +36,7 @@ export const label = cva(
 export const field = cva(["relative w-full"]);
 
 export const input = cva([
-  "h-14 w-full bg-transparent px-4 pt-5 pb-2 text-body-large outline-none ui-disabled:text-on-surface/38 ui-not-disabled:text-on-surface",
+  "h-14 w-full bg-transparent px-4 pb-2 pt-5 text-body-large outline-none ui-disabled:text-on-surface/38 ui-not-disabled:text-on-surface",
 ]);
 
 export const adornment = cva(["inline-flex items-center"], {

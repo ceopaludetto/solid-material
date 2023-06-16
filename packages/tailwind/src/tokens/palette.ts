@@ -1,13 +1,8 @@
-import type { Scheme } from "@material/material-color-utilities";
+import type { Scheme } from "mcu-extra";
 import type { KebabCase } from "type-fest";
 
-import {
-  argbFromHex,
-  blueFromArgb,
-  greenFromArgb,
-  redFromArgb,
-  themeFromSourceColor,
-} from "@material/material-color-utilities";
+import { argbFromHex, blueFromArgb, greenFromArgb, redFromArgb } from "@material/material-color-utilities";
+import { themeFromSourceColor } from "mcu-extra";
 
 import { getTypedEntries, getTypedKeys, kebabCase } from "~/utils";
 

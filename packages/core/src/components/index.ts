@@ -13,3 +13,5 @@ export * from "./switch";
 export * from "./tabs";
 export * from "./text-field";
 export * from "./top-bar";
+
+export { As } from "@kobalte/core";

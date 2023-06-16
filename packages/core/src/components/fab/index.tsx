@@ -1,4 +1,3 @@
-import type { PolymorphicProps, As } from "@kobalte/utils";
 import type { VariantProps } from "class-variance-authority";
 import type { JSX } from "solid-js";
 
@@ -9,17 +8,15 @@ import { icon, root } from "./styles";
 import { createRipples } from "~/primitives";
 import { mergeWithRefs } from "~/utils/refs";
 
-type FABOwnProps = KButton.ButtonRootOptions &
+export type FABProps = KButton.ButtonRootOptions &
   VariantProps<typeof root> & {
     class?: string;
     icon?: JSX.Element;
     children?: JSX.Element;
   };
 
-export type FABProps<T extends As = "button"> = PolymorphicProps<T, FABOwnProps>;
-
-export function FAB<T extends As = "button">(props: FABProps<T>): JSX.Element {
-  const [trigger] = createRipples({ disabled: props.isDisabled });
+export function FAB(props: FABProps): JSX.Element {
+  const [trigger] = createRipples({ disabled: props.disabled });
   const [local, rest] = splitProps(props, ["class", "children", "variant", "icon", "size"]);
 
   const isExtended = createMemo(() => !!local.children);
