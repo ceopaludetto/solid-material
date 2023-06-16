@@ -1,13 +1,13 @@
 {
-  "tailwindCSS.experimental.configFile": "apps/docs/tailwind.config.cjs",
+  "tailwindCSS.experimental.configFile": "apps/docs/tailwind.config.ts",
   "tailwindCSS.experimental.classRegex": [["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]],
 
   "eslint.workingDirectories": ["packages/*", "apps/*"],
-  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact", "astro"],
+  "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
 
   "editor.codeActionsOnSave": {
     "source.fixAll": true
   },
 
-  "prettier.documentSelectors": ["**/*.astro", "**/*.mdx"]
+  "prettier.documentSelectors": ["**/*.mdx"]
 }

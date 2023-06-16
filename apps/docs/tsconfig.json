@@ -1,13 +1,13 @@
 {
-  "extends": "astro/tsconfigs/strict",
+  "extends": "@solidjs-material/configuration/tsconfig.base.json",
   "compilerOptions": {
-    "allowJs": true,
-    "jsx": "preserve",
+    "lib": ["DOM", "ESNext"],
     "jsxImportSource": "solid-js",
-    "baseUrl": ".",
+    "jsx": "preserve",
+    "baseUrl": "./",
     "paths": {
-      "~/*": ["src/*"]
+      "~/*": ["./src/*"]
     }
   },
-  "include": ["src", ".eslintrc.cjs", "tailwind.config.cjs", "astro.config.mjs"]
+  "include": ["src", "tailwind.config.cjs", "postcss.config.cjs", "vite.config.ts", ".eslintrc.cjs"]
 }

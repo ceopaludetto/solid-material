@@ -28,3 +28,6 @@ pnpm-debug.log*
 
 # coverage
 coverage/
+
+# solid start
+.solid

@@ -1,30 +1,40 @@
 {
   "name": "@solidjs-material/docs",
-  "version": "0.0.6",
-  "private": true,
   "type": "module",
   "scripts": {
-    "astro": "astro",
-    "build": "astro build",
-    "dev": "astro dev",
-    "lint": "eslint \"src/**/*.{ts,tsx,astro}\" --fix",
-    "preview": "astro preview",
-    "start": "astro dev"
+    "build": "solid-start build",
+    "dev": "solid-start dev",
+    "start": "solid-start start"
   },
   "dependencies": {
-    "@fontsource/poppins": "^4.5.10",
     "@solidjs-material/core": "workspace:^0.0.12",
-    "solid-icons": "^1.0.4",
-    "solid-js": "^1.6.11",
-    "tailwindcss": "^3.2.7"
+    "@solidjs/meta": "^0.28.2",
+    "@solidjs/router": "^0.8.2",
+    "@whyframe/core": "^0.1.10",
+    "solid-js": "^1.7.2",
+    "solid-mdx": "^0.0.6",
+    "solid-start": "^0.2.26",
+    "undici": "^5.15.1"
   },
   "devDependencies": {
-    "@astrojs/mdx": "^0.17.0",
-    "@astrojs/solid-js": "^2.0.2",
-    "@astrojs/tailwind": "^3.0.1",
+    "@iconify-json/iconoir": "^1.1.28",
+    "@mdx-js/rollup": "^2.2.1",
+    "@rushstack/eslint-patch": "^1.3.1",
     "@solidjs-material/configuration": "workspace:^0.0.7",
     "@solidjs-material/tailwind": "workspace:^0.0.8",
     "@tailwindcss/typography": "^0.5.9",
-    "astro": "^2.0.14"
+    "@whyframe/jsx": "^0.1.9",
+    "autoprefixer": "^10.4.14",
+    "eslint": "^8.42.0",
+    "remark-frontmatter": "^4.0.1",
+    "remark-mdx-frontmatter": "^3.0.0",
+    "solid-start-node": "^0.2.19",
+    "tailwindcss": "^3.3.2",
+    "typescript": "^4.9.4",
+    "unplugin-icons": "^0.16.3",
+    "vite": "^4.1.4"
+  },
+  "engines": {
+    "node": ">=16"
   }
 }
